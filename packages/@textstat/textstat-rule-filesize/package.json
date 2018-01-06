@@ -1,11 +1,11 @@
 {
-  "name": "@textstat/textstat",
+  "name": "@textstat/textstat-rule-filesize",
   "version": "1.0.0",
-  "description": "textstat core",
+  "description": "Report file size",
   "keywords": [
-    "textstat"
+    "textstatrule"
   ],
-  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat/",
+  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat-rule-filesize/",
   "bugs": {
     "url": "https://github.com/textlint/textstat/issues"
   },
@@ -16,8 +16,8 @@
     "lib/",
     "src/"
   ],
-  "main": "lib/textstat.js",
-  "types": "lib/textstat.d.ts",
+  "main": "lib/textstat-rule-filesize/src/index.js",
+  "types": "lib/textstat-rule-filesize/src/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -34,9 +34,8 @@
     "watch": "tsc -p . --watch"
   },
   "dependencies": {
-    "@textlint/kernel": "^2.0.3",
-    "@textstat/textstat-rule-filesize":"^1.0.0",
-    "textlint-plugin-markdown": "^4.0.4"
+    "filesize": "^3.5.11",
+    "@textstat/rule-context": "^1.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.45",
@@ -48,6 +47,7 @@
     "typescript": "^2.6.2"
   },
   "prettier": {
+    "singleQuote": false,
     "printWidth": 120,
     "tabWidth": 4
   }

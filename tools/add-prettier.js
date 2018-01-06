@@ -20,6 +20,5 @@ const addPrettier = pkg => {
         prettier
     });
 };
-
 const newPkg = addPrettier(pkg);
 fs.writeFileSync(pkgPath, JSON.stringify(newPkg, null, 2), "utf-8");

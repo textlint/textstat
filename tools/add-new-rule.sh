@@ -25,7 +25,7 @@ mocha \
 cross-env \
 ts-node
 
-sh ${scriptDir}/scripts/add-prettier.sh
+sh ${scriptDir}/add-prettier.sh
 
 # Copy config
 echo_message "Copy .tsconfig.json"
@@ -39,10 +39,11 @@ npe scripts.build "cross-env NODE_ENV=production tsc -p ."
 npe scripts.watch "tsc -p . --watch"
 npe scripts.prepublish "npm run --if-present build"
 npe scripts.test "mocha \"test/**/*.ts\""
-npe types "lib/${currentDirName}.d.ts"
+npe main "lib/${currentDirName}/src/index.js"
+npe types "lib/${currentDirName}/src/index.d.ts"
 sort-package-json
 # create README
 rm README.md
-pkg-to-readme --template "${scriptDir}/textstat.readme.template" -o ./README.md
+pkg-to-readme --template "${scriptDir}/resources/textstat.readme.template" -o ./README.md
 # git
 git add .
