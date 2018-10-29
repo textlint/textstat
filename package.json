@@ -7,7 +7,8 @@
   "scripts": {
     "clean": "lerna run clean && lerna clean --yes",
     "test": "lerna run test",
-    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "bootstrap": "lerna bootstrap && yarn run build",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
     "precommit": "lint-staged",
     "postcommit": "git reset"
@@ -18,9 +19,9 @@
   ],
   "private": true,
   "devDependencies": {
-    "husky": "^0.14.3",
-    "lerna": "^2.5.1",
-    "lint-staged": "^6.0.0",
+    "husky": "^1.1.2",
+    "lerna": "^3.4.3",
+    "lint-staged": "^7.3.0",
     "prettier": "^1.9.2"
   },
   "prettier": {
@@ -33,7 +34,7 @@
       "git add"
     ]
   },
-  "workspace": [
+  "workspaces": [
     "packages/*",
     "packages/@textstat/*"
   ]

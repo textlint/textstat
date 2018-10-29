@@ -35,8 +35,8 @@ cp ${scriptDir}/resources/typescript.mocha.opts ./test/mocha.opts
 # Edit package.json
 ## Add script
 echo_message "Add npm run-script"
-npe scripts.build "cross-env NODE_ENV=production tsc -p ."
-npe scripts.watch "tsc -p . --watch"
+npe scripts.build "cross-env NODE_ENV=production tsc --build"
+npe scripts.watch "tsc --build --watch"
 npe scripts.prepublish "npm run --if-present build"
 npe scripts.test "mocha \"test/**/*.ts\""
 npe main "lib/${currentDirName}/src/index.js"

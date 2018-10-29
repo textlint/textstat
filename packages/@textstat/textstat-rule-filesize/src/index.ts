@@ -17,9 +17,12 @@ const report: TextstatRuleReporter = function(context) {
             report(node, {
                 message: "File size in the document",
                 range: node.range,
-                details: {
-                    "File Size": fileSize(fileSizeInBytes)
-                }
+                details: [
+                    {
+                        name: "File Size",
+                        size: fileSize(fileSizeInBytes)
+                    }
+                ]
             });
         }
     };

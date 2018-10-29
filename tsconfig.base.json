@@ -1,13 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./packages",
-    "paths": {
-      "@textstat/*": [
-        "@textstat/*/src"
-      ]
-    },
     "outDir": "________RENAMED_______",
-    /* Basic Options */
     "module": "commonjs",
     "moduleResolution": "node",
     "newLine": "LF",
@@ -19,17 +12,14 @@
       "es2017",
       "dom"
     ],
-    /* Strict Type-Checking Options */
     "strict": true,
-    /* Additional Checks */
     "noUnusedLocals": true,
-    /* Report errors on unused locals. */
     "noUnusedParameters": true,
-    /* Report errors on unused parameters. */
     "noImplicitReturns": true,
-    /* Report error when not all code paths in function return a value. */
-    "noFallthroughCasesInSwitch": true
-    /* Report errors for fallthrough cases in switch statement. */
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    /* monorepo */
+    "composite": true
   },
   "include": [
     "src/**/*"

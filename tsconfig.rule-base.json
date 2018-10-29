@@ -1,8 +1,6 @@
 {
-
-  "extends": "../../../tsconfig.base.json",
+  "extends":  "./tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "./lib/",
     "composite": true
   },
   "references": [
@@ -12,12 +10,5 @@
     {
       "path": "../textstat/tsconfig.json"
     }
-  ],
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    ".git",
-    "node_modules"
   ]
 }
