@@ -11,6 +11,9 @@
     },
     {
       "path": "../textstat/tsconfig.json"
+    },
+    {
+      "path": "../textstat-tester/tsconfig.json"
     }
   ],
   "include": [

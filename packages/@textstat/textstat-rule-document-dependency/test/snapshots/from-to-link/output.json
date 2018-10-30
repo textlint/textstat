@@ -1,0 +1,45 @@
+{
+    "messages": [
+        {
+            "type": "lint",
+            "ruleId": "textstat-rule-document-dependency",
+            "message": "Dependency links in the document",
+            "index": 0,
+            "line": 1,
+            "column": 1,
+            "severity": 2,
+            "data": {
+                "message": "Dependency links in the document",
+                "range": [
+                    0,
+                    12
+                ],
+                "details": [
+                    {
+                        "name": "To Links",
+                        "urls": [
+                            {
+                                "type": "file",
+                                "path": "<snapshot>/from-to-link/a.md"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "From Links",
+                        "urls": [
+                            {
+                                "type": "file",
+                                "path": "<snapshot>/from-to-link/a.md"
+                            },
+                            {
+                                "type": "file",
+                                "path": "<snapshot>/from-to-link/b.md"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "filePath": "<snapshot>/from-to-link/input.md"
+}

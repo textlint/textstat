@@ -38,10 +38,7 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "@textlint/kernel": "^3.0.0",
-    "@textstat/textstat-rule-document-dependency": "^1.0.0",
-    "@textstat/textstat-rule-filesize": "^1.0.0",
-    "textlint-plugin-markdown": "^4.0.4"
+    "@textlint/kernel": "^3.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",

@@ -1,0 +1,27 @@
+{
+    "messages": [
+        {
+            "type": "lint",
+            "ruleId": "textstat-rule-filesize",
+            "message": "File size in the document",
+            "index": 0,
+            "line": 1,
+            "column": 1,
+            "severity": 2,
+            "data": {
+                "message": "File size in the document",
+                "range": [
+                    0,
+                    99
+                ],
+                "details": [
+                    {
+                        "name": "File Size",
+                        "size": "99 B"
+                    }
+                ]
+            }
+        }
+    ],
+    "filePath": "<snapshot>/100kb/input.md"
+}

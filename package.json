@@ -7,6 +7,7 @@
   "scripts": {
     "clean": "lerna run clean && lerna clean --yes",
     "test": "lerna run test",
+    "updateSnapshot": "UPDATE_SNAPSHOT=1 lerna run test",
     "build": "lerna run build",
     "bootstrap": "lerna bootstrap && yarn run build",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",

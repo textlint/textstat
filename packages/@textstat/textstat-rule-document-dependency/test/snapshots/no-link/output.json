@@ -1,0 +1,31 @@
+{
+    "messages": [
+        {
+            "type": "lint",
+            "ruleId": "textstat-rule-document-dependency",
+            "message": "Dependency links in the document",
+            "index": 0,
+            "line": 1,
+            "column": 1,
+            "severity": 2,
+            "data": {
+                "message": "Dependency links in the document",
+                "range": [
+                    0,
+                    11
+                ],
+                "details": [
+                    {
+                        "name": "To Links",
+                        "urls": []
+                    },
+                    {
+                        "name": "From Links",
+                        "urls": []
+                    }
+                ]
+            }
+        }
+    ],
+    "filePath": "<snapshot>/no-link/input.md"
+}

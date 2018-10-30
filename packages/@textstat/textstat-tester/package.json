@@ -1,11 +1,8 @@
 {
-  "name": "@textstat/textstat-rule-document-dependency",
+  "name": "@textstat/textstat-tester",
   "version": "1.0.0",
-  "description": "Report document dependencies.",
-  "keywords": [
-    "textstatrule"
-  ],
-  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat-rule-document-dependency/",
+  "description": "Test framework for textstat rules.",
+  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat-tester/",
   "bugs": {
     "url": "https://github.com/textlint/textstat/issues"
   },
@@ -16,8 +13,8 @@
     "lib/",
     "src/"
   ],
-  "main": "lib/src/index.js",
-  "types": "lib/src/index.d.ts",
+  "main": "lib/src/textstat-tester.js",
+  "types": "lib/src/textstat-tester.d.ts",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -28,10 +25,10 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production tsc --build",
+    "clean": "rimraf lib/",
     "prepublish": "npm run --if-present build",
-    "test": "mocha \"test/**/*.ts\"",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
-    "watch": "tsc --build --watch"
+    "watch": "tsc -p . --watch"
   },
   "prettier": {
     "printWidth": 120,
@@ -39,20 +36,20 @@
     "tabWidth": 4
   },
   "dependencies": {
+    "@textstat/textstat": "^1.0.0",
     "@textstat/rule-context": "^1.0.0",
-    "is-url": "^1.2.4",
-    "unist-util-visit": "^1.4.0"
+    "@textlint/textlint-plugin-markdown": "^4.0.4"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.0",
-    "cross-env": "^5.1.3",
+    "@types/node": "^10.12.1",
+    "cross-env": "^5.2.0",
     "mocha": "^5.2.0",
-    "prettier": "^1.9.2",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2",
     "ts-node": "^7.0.1",
-    "typescript": "^3.1.3",
-    "@textstat/textstat-tester": "^1.0.0",
-    "node-glob":  "^1.2.0"
+    "ts-node-test-register": "^4.0.0",
+    "typescript": "^3.1.4"
   },
   "publishConfig": {
     "access": "public"

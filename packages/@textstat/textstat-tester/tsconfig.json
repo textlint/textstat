@@ -1,5 +1,4 @@
 {
-
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./lib/",
@@ -11,9 +10,6 @@
     },
     {
       "path": "../textstat/tsconfig.json"
-    },
-    {
-      "path": "../textstat-tester/tsconfig.json"
     }
   ],
   "include": [

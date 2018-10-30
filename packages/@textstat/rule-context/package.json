@@ -29,7 +29,6 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production tsc --build",
     "prepublish": "npm run --if-present build",
-    "test": "mocha \"test/**/*.ts\"",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
     "watch": "tsc --build --watch"
   },
