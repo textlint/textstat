@@ -1,4 +1,4 @@
-# @textstat/textstat-rule-number-of-characters
+# @textstat/textstat-rule-number-of-images
 
 Report file size
 
@@ -6,7 +6,7 @@ Report file size
 
 Install with [npm](https://www.npmjs.com/):
 
-    npm install @textstat/textstat-rule-number-of-characters
+    npm install @textstat/textstat-rule-number-of-images
 
 ## Usage
 
@@ -15,7 +15,7 @@ Via `.textstatrc`(Recommended)
 ```json
 {
     "rules": {
-        "@textstat/number-of-characters": true
+        "@textstat/number-of-images": true
     }
 }
 ```
@@ -23,7 +23,7 @@ Via `.textstatrc`(Recommended)
 Via CLI
 
 ```
-textlint --rule @textstat/number-of-characters README.md
+textlint --rule @textstat/number-of-images README.md
 ```
 
 
