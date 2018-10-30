@@ -1,0 +1,23 @@
+{
+    "messages": [
+        {
+            "type": "lint",
+            "ruleId": "textstat-rule-number-of-paragraphs",
+            "message": "Number of paragraphs in the document",
+            "index": 0,
+            "line": 1,
+            "column": 1,
+            "severity": 2,
+            "data": {
+                "message": "Number of paragraphs in the document",
+                "details": [
+                    {
+                        "name": "Number of paragraphs",
+                        "value": 5
+                    }
+                ]
+            }
+        }
+    ],
+    "filePath": "<snapshot>/5/input.md"
+}
