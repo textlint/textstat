@@ -1,11 +1,11 @@
 {
-  "name": "@textstat/textstat",
+  "name": "@textstat/textstat-rule-document-dependency",
   "version": "1.0.0",
-  "description": "textstat core",
+  "description": "Report document dependencies.",
   "keywords": [
-    "textstat"
+    "textstatrule"
   ],
-  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat/",
+  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat-rule-document-dependency/",
   "bugs": {
     "url": "https://github.com/textlint/textstat/issues"
   },
@@ -34,10 +34,9 @@
     "watch": "tsc --build --watch"
   },
   "dependencies": {
-    "@textlint/kernel": "^3.0.0",
-    "@textstat/textstat-rule-filesize": "^1.0.0",
-    "@textstat/textstat-rule-document-dependency": "^1.0.0",
-    "textlint-plugin-markdown": "^4.0.4"
+    "@textstat/rule-context": "^1.0.0",
+    "is-url": "^1.2.4",
+    "unist-util-visit": "^1.4.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",
@@ -49,6 +48,7 @@
     "typescript": "^3.1.3"
   },
   "prettier": {
+    "singleQuote": false,
     "printWidth": 120,
     "tabWidth": 4
   }

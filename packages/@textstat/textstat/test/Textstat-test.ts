@@ -1,11 +1,13 @@
-import { Index } from "../src/Textstat";
+import { Textstat } from "../src";
 import * as fs from "fs";
 import * as path from "path";
 
+const glob = require("glob");
 describe("Textstat", () => {
     it("work", async () => {
-        const textstat = new Index();
-        const filePath = path.join(__dirname, "../README.md");
+        const textstat = new Textstat();
+        const filePathList = glob.sync("/Users/azu/.ghq/github.com/asciidwango/js-primer/source/basic/**/*.md");
+        const filePath = "/Users/azu/.ghq/github.com/asciidwango/js-primer/source/basic/statement-expression/README.md";
         const text = fs.readFileSync(filePath, "utf-8");
         const results = await textstat.report(text, {
             filePath,
@@ -14,6 +16,10 @@ describe("Textstat", () => {
                 {
                     ruleId: "filesize",
                     rule: require("@textstat/textstat-rule-filesize")
+                },
+                {
+                    ruleId: "document-dependency",
+                    rule: require("@textstat/textstat-rule-document-dependency")
                 }
             ],
             plugins: [
@@ -23,7 +29,7 @@ describe("Textstat", () => {
                 }
             ],
             sharedDeps: {
-                filePathList: [filePath]
+                filePathList: filePathList
             }
         });
         console.log(JSON.stringify(results, null, 4));

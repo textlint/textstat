@@ -1,17 +1,41 @@
-import { TextlintKernel, TextlintKernelPlugin, TextlintResult } from "@textlint/kernel";
+import {
+    TextlintKernel,
+    TextlintKernelPlugin,
+    TextlintResult,
+    TextlintPluginDescriptors,
+    TextlintPluginDescriptor
+} from "@textlint/kernel";
 import { TextstatKernelFilterRule, TextstatKernelRule, TextstatRuleSharedDependencies } from "@textstat/rule-context";
+import * as path from "path";
 
-function bindTrailingArgs(fn: any, ...trailingArgs: Array<any>) {
+function bindTrailingArgs(fn: any, sharedDeps: TextstatRuleSharedDependencies) {
     return function(context: any, options?: any) {
         if (typeof fn.default === "function") {
-            return fn.default(context, options, ...trailingArgs);
+            return fn.default(context, options, sharedDeps);
         } else {
-            return (fn as any)(context, options, ...trailingArgs);
+            return (fn as any)(context, options, sharedDeps);
         }
     };
 }
 
-export class Index {
+export const createParser = (plugins: TextlintKernelPlugin[] = []) => {
+    const textlintPluginDescriptors = plugins.map(plugin => {
+        return new TextlintPluginDescriptor(plugin);
+    });
+    const pluginDescriptors = new TextlintPluginDescriptors(textlintPluginDescriptors);
+    return {
+        parse(text: string, filePath: string) {
+            const ext = path.extname(filePath);
+            const plugin = pluginDescriptors.findPluginDescriptorWithExt(ext);
+            if (!plugin) {
+                throw new Error("Anyone does not support ext" + ext);
+            }
+            return plugin.processor.processor(ext).preProcess(text, filePath);
+        }
+    };
+};
+
+export class Textstat {
     report(
         text: string,
         options: {
@@ -21,10 +45,17 @@ export class Index {
             rules?: TextstatKernelRule[];
             filterRules?: TextstatKernelFilterRule[];
             configBaseDir?: string;
-            sharedDeps: TextstatRuleSharedDependencies;
+            sharedDeps: {
+                filePathList: string[];
+            };
         }
     ): Promise<TextlintResult> {
         const kernel = new TextlintKernel();
+        const parserDeps = createParser(options.plugins);
+        const sharedDependencies: TextstatRuleSharedDependencies = {
+            filePathList: options.sharedDeps.filePathList,
+            parser: parserDeps
+        };
         return kernel.lintText(text, {
             ext: options.ext,
             filePath: options.filePath,
@@ -34,7 +65,7 @@ export class Index {
                 options.rules.map(rule => {
                     return {
                         ...rule,
-                        rule: bindTrailingArgs(rule.rule, options.sharedDeps)
+                        rule: bindTrailingArgs(rule.rule, sharedDependencies)
                     };
                 }),
             filterRules:
@@ -42,7 +73,8 @@ export class Index {
                 options.filterRules.map(rule => {
                     return {
                         ...rule,
-                        rule: bindTrailingArgs(rule.rule, options.sharedDeps)
+                        rule: bindTrailingArgs(rule.rule, sharedDependencies),
+                        parser: parserDeps
                     };
                 }),
             plugins: options.plugins

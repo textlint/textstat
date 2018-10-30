@@ -6,6 +6,10 @@ import { TxtNode, TxtNodeType } from "@textlint/kernel/lib/ast-node-types/src";
 export type TextstatRuleSharedDependencies = {
     // target to stat
     filePathList: string[];
+    // parser
+    parser: {
+        parse(text: string, ext: string): TxtNode;
+    };
 };
 
 export type TextstatRuleReporter = (
