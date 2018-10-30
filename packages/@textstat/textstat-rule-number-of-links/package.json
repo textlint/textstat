@@ -1,11 +1,11 @@
 {
-  "name": "@textstat/textstat-rule-number-of-images",
+  "name": "@textstat/textstat-rule-number-of-links",
   "version": "1.0.0",
   "description": "Report file size",
   "keywords": [
     "textstatrule"
   ],
-  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat-rule-number-of-images/",
+  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat-rule-number-of-links/",
   "bugs": {
     "url": "https://github.com/textlint/textstat/issues"
   },

@@ -1,0 +1,23 @@
+{
+    "messages": [
+        {
+            "type": "lint",
+            "ruleId": "textstat-rule-number-of-links",
+            "message": "Number of links in the document",
+            "index": 0,
+            "line": 1,
+            "column": 1,
+            "severity": 2,
+            "data": {
+                "message": "Number of links in the document",
+                "data": [
+                    {
+                        "name": "number of Links",
+                        "value": 5
+                    }
+                ]
+            }
+        }
+    ],
+    "filePath": "<snapshot>/5/input.md"
+}
