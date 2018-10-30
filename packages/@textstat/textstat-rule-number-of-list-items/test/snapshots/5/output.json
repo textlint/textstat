@@ -1,0 +1,23 @@
+{
+    "messages": [
+        {
+            "type": "lint",
+            "ruleId": "textstat-rule-number-of-list-items",
+            "message": "Number of list items in the document",
+            "index": 0,
+            "line": 1,
+            "column": 1,
+            "severity": 2,
+            "data": {
+                "message": "Number of list items in the document",
+                "details": [
+                    {
+                        "name": "Number of list items",
+                        "value": 5
+                    }
+                ]
+            }
+        }
+    ],
+    "filePath": "<snapshot>/5/input.md"
+}
