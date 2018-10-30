@@ -1,11 +1,11 @@
 {
-  "name": "@textstat/textstat-rule-filesize",
+  "name": "@textstat/textstat-rule-number-of-characters",
   "version": "1.0.0",
   "description": "Report file size",
   "keywords": [
     "textstatrule"
   ],
-  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat-rule-filesize/",
+  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat-rule-number-of-characters/",
   "bugs": {
     "url": "https://github.com/textlint/textstat/issues"
   },

@@ -2,26 +2,26 @@
     "messages": [
         {
             "type": "lint",
-            "ruleId": "textstat-rule-filesize",
-            "message": "File size in the document",
+            "ruleId": "textstat-rule-number-of-characters",
+            "message": "Number of characters in the document.",
             "index": 0,
             "line": 1,
             "column": 1,
             "severity": 2,
             "data": {
-                "message": "File size in the document",
+                "message": "Number of characters in the document.",
                 "range": [
                     0,
-                    99
+                    100
                 ],
                 "details": [
                     {
-                        "name": "File Size",
-                        "value": "99 B"
+                        "name": "Number of characters",
+                        "value": 100
                     }
                 ]
             }
         }
     ],
-    "filePath": "<snapshot>/100kb/input.md"
+    "filePath": "<snapshot>/100/input.md"
 }

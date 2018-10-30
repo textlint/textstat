@@ -1,26 +1,23 @@
 // LICENSE : MIT
 "use strict";
-import * as fs from "fs";
 import { TextstatRuleReporter } from "@textstat/rule-context";
 
-const fileSize = require("filesize");
 const report: TextstatRuleReporter = function(context) {
-    let { Syntax, getFilePath, report } = context;
+    const { Syntax, getSource, report } = context;
     return {
         [Syntax.Document](node) {
-            const filePath = getFilePath();
-            if (!filePath) {
+            const text = getSource(node);
+            if (!text) {
                 return;
             }
-            const stats = fs.statSync(filePath);
-            const fileSizeInBytes = stats["size"];
+            const charactersCount = text.length;
             report(node, {
-                message: "File size in the document",
+                message: "Number of characters in the document.",
                 range: node.range,
                 details: [
                     {
-                        name: "File Size",
-                        value: fileSize(fileSizeInBytes)
+                        name: "Number of characters",
+                        value: charactersCount
                     }
                 ]
             });

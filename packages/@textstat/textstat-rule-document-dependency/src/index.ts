@@ -82,11 +82,11 @@ const report: TextstatRuleReporter = function(context, _options, deps) {
                 details: [
                     {
                         name: "To Links",
-                        urls: toLinks
+                        value: toLinks
                     },
                     {
                         name: "From Links",
-                        urls: fromLinks
+                        value: fromLinks
                     }
                 ]
             });

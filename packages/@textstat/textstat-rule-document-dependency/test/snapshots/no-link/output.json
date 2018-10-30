@@ -17,11 +17,11 @@
                 "details": [
                     {
                         "name": "To Links",
-                        "urls": []
+                        "value": []
                     },
                     {
                         "name": "From Links",
-                        "urls": []
+                        "value": []
                     }
                 ]
             }

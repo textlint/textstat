@@ -17,7 +17,7 @@
                 "details": [
                     {
                         "name": "To Links",
-                        "urls": [
+                        "value": [
                             {
                                 "type": "file",
                                 "path": "<snapshot>/from-to-link/a.md"
@@ -26,7 +26,7 @@
                     },
                     {
                         "name": "From Links",
-                        "urls": [
+                        "value": [
                             {
                                 "type": "file",
                                 "path": "<snapshot>/from-to-link/a.md"
