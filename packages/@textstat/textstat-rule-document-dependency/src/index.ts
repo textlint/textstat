@@ -19,7 +19,7 @@ const report: TextstatRuleReporter = function(context, _options, deps) {
         type: "file";
         path: string;
     }[] = [];
-    const filePath = getFilePath();
+    const currentFilePath = getFilePath();
     /**
      * Add "From to the document" link
      * @param baseFilePath
@@ -33,7 +33,7 @@ const report: TextstatRuleReporter = function(context, _options, deps) {
             return;
         }
         const absoluteToUrl = path.resolve(path.dirname(baseFilePath), stripHash(urlString));
-        if (filePath !== absoluteToUrl) {
+        if (currentFilePath !== absoluteToUrl) {
             return;
         }
         fromLinks.push({
@@ -61,10 +61,10 @@ const report: TextstatRuleReporter = function(context, _options, deps) {
                 type: "url",
                 path: urlString
             });
-        } else {
+        } else if (currentFilePath) {
             toLinks.push({
                 type: "file",
-                path: stripHash(urlString)
+                path: path.resolve(path.dirname(currentFilePath), stripHash(urlString))
             });
         }
     };
