@@ -1,0 +1,23 @@
+{
+    "messages": [
+        {
+            "type": "lint",
+            "ruleId": "textstat-rule-number-of-sentences",
+            "message": "Number of sentences in the document",
+            "index": 0,
+            "line": 1,
+            "column": 1,
+            "severity": 2,
+            "data": {
+                "message": "Number of sentences in the document",
+                "details": [
+                    {
+                        "name": "number of sentences",
+                        "value": 10
+                    }
+                ]
+            }
+        }
+    ],
+    "filePath": "<snapshot>/10/input.md"
+}
