@@ -12,7 +12,7 @@
                 "message": "Number of sentences in the document",
                 "details": [
                     {
-                        "name": "number of sentences",
+                        "name": "Number of sentences",
                         "value": 10
                     }
                 ]

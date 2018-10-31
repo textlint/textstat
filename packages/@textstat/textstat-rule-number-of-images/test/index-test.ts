@@ -1,6 +1,6 @@
 import * as path from "path";
 import { runTest } from "@textstat/textstat-tester";
-import rule from "../src/index";
+import * as rule from "../src/index";
 
 describe("textstat-rule-number-of-images", () => {
     runTest(path.join(__dirname, "snapshots"), {

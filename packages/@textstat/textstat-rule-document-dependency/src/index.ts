@@ -1,5 +1,5 @@
 "use strict";
-import { TextstatRuleReporter } from "@textstat/rule-context";
+import { TextstatRuleReporter, Localize } from "@textstat/rule-context";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -9,8 +9,29 @@ const stripHash = (pathString: string) => {
     // remove #
     return pathString.replace(/#.*$/, "");
 };
-const report: TextstatRuleReporter = function(context, _options, deps) {
+export const meta = {
+    docs: {
+        homepage: require("../package.json").homepage,
+        description: require("../package.json").description
+    },
+    messages: {
+        message: {
+            en: "Dependency links in the document",
+            ja: "ドキュメントの依存関係"
+        },
+        "To Links": {
+            en: "To Links",
+            ja: "リンク先"
+        },
+        "From Links": {
+            en: "From Links",
+            ja: "リンク元"
+        }
+    }
+};
+export const report: TextstatRuleReporter = function(context, _options, deps) {
     const { Syntax, report, getFilePath } = context;
+    const { t } = new Localize(meta.messages);
     const toLinks: {
         type: "url" | "file";
         path: string;
@@ -77,15 +98,15 @@ const report: TextstatRuleReporter = function(context, _options, deps) {
         },
         [`${Syntax.Document}:exit`](node) {
             report(node, {
-                message: "Dependency links in the document",
+                message: t("message"),
                 range: node.range,
                 details: [
                     {
-                        name: "To Links",
+                        name: t("To Links"),
                         value: toLinks
                     },
                     {
-                        name: "From Links",
+                        name: t("From Links"),
                         value: fromLinks
                     }
                 ]
@@ -93,4 +114,3 @@ const report: TextstatRuleReporter = function(context, _options, deps) {
         }
     };
 };
-export default report;

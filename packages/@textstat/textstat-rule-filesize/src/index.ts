@@ -1,11 +1,26 @@
 // LICENSE : MIT
 "use strict";
 import * as fs from "fs";
-import { TextstatRuleReporter } from "@textstat/rule-context";
+import { Localize, TextstatRuleMeta, TextstatRuleReporter } from "@textstat/rule-context";
 
 const fileSize = require("filesize");
-const report: TextstatRuleReporter = function(context) {
-    let { Syntax, getFilePath, report } = context;
+export const meta: TextstatRuleMeta = {
+    docs: require("../package.json"),
+    messages: {
+        message: {
+            en: "File size",
+            ja: "ドキュメントのファイルサイズ"
+        },
+        "File size": {
+            en: "File size",
+            ja: "ファイルサイズ"
+        }
+    }
+};
+
+export const report: TextstatRuleReporter = function(context) {
+    const { Syntax, getFilePath, report } = context;
+    const { t } = new Localize(meta.messages);
     return {
         [Syntax.Document](node) {
             const filePath = getFilePath();
@@ -15,11 +30,11 @@ const report: TextstatRuleReporter = function(context) {
             const stats = fs.statSync(filePath);
             const fileSizeInBytes = stats["size"];
             report(node, {
-                message: "File size in the document",
+                message: t("message"),
                 range: node.range,
                 details: [
                     {
-                        name: "File Size",
+                        name: t("File size"),
                         value: fileSize(fileSizeInBytes)
                     }
                 ]
@@ -27,4 +42,3 @@ const report: TextstatRuleReporter = function(context) {
         }
     };
 };
-export default report;

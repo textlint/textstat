@@ -1,10 +1,24 @@
 // LICENSE : MIT
 "use strict";
-import { TextstatRuleReporter } from "@textstat/rule-context";
+import { Localize, TextstatRuleMeta, TextstatRuleReporter } from "@textstat/rule-context";
 import { splitAST, Syntax as SentenceSyntax } from "sentence-splitter";
 
-const report: TextstatRuleReporter = function(context) {
+export const meta: TextstatRuleMeta = {
+    docs: require("../package.json"),
+    messages: {
+        message: {
+            en: "Number of sentences in the document",
+            ja: "ドキュメント中のセンテンス数"
+        },
+        "Number of sentences": {
+            en: "Number of sentences",
+            ja: "センテンス数"
+        }
+    }
+};
+export const report: TextstatRuleReporter = function(context) {
     const { Syntax, report } = context;
+    const { t } = new Localize(meta.messages);
     let count = 0;
     return {
         [Syntax.Document]() {
@@ -18,10 +32,10 @@ const report: TextstatRuleReporter = function(context) {
         },
         [Syntax.Document + ":exit"](node) {
             report(node, {
-                message: "Number of sentences in the document",
+                message: t("message"),
                 details: [
                     {
-                        name: "number of sentences",
+                        name: t("Number of sentences"),
                         value: count
                     }
                 ]
@@ -29,4 +43,3 @@ const report: TextstatRuleReporter = function(context) {
         }
     };
 };
-export default report;

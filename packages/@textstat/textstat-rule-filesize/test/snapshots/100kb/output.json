@@ -3,20 +3,20 @@
         {
             "type": "lint",
             "ruleId": "textstat-rule-filesize",
-            "message": "File size in the document",
+            "message": "File size",
             "index": 0,
             "line": 1,
             "column": 1,
             "severity": 2,
             "data": {
-                "message": "File size in the document",
+                "message": "File size",
                 "range": [
                     0,
                     99
                 ],
                 "details": [
                     {
-                        "name": "File Size",
+                        "name": "File size",
                         "value": "99 B"
                     }
                 ]

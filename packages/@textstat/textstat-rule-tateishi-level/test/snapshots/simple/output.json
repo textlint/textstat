@@ -1,0 +1,23 @@
+{
+    "messages": [
+        {
+            "type": "lint",
+            "ruleId": "textstat-rule-tateish-level",
+            "message": "読みやすさの偏差値",
+            "index": 0,
+            "line": 1,
+            "column": 1,
+            "severity": 2,
+            "data": {
+                "message": "読みやすさの偏差値",
+                "details": [
+                    {
+                        "name": "偏差値(平均50、標準偏差10、高いほど読みやすい)",
+                        "value": 110
+                    }
+                ]
+            }
+        }
+    ],
+    "filePath": "<snapshot>/simple/input.md"
+}

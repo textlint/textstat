@@ -1,6 +1,6 @@
 import * as path from "path";
 import { runTest } from "@textstat/textstat-tester";
-import rule from "../src/index";
+import * as rule from "../src/index";
 
 const glob = require("glob");
 describe("textstat-rule-document-dependency", () => {

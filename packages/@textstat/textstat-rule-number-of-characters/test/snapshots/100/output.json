@@ -3,13 +3,13 @@
         {
             "type": "lint",
             "ruleId": "textstat-rule-number-of-characters",
-            "message": "Number of characters in the document.",
+            "message": "Number of characters in the document",
             "index": 0,
             "line": 1,
             "column": 1,
             "severity": 2,
             "data": {
-                "message": "Number of characters in the document.",
+                "message": "Number of characters in the document",
                 "range": [
                     0,
                     100

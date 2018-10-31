@@ -1,9 +1,23 @@
 // LICENSE : MIT
 "use strict";
-import { TextstatRuleReporter } from "@textstat/rule-context";
+import { Localize, TextstatRuleMeta, TextstatRuleReporter } from "@textstat/rule-context";
 
-const report: TextstatRuleReporter = function(context) {
+export const meta: TextstatRuleMeta = {
+    docs: require("../package.json"),
+    messages: {
+        message: {
+            en: "Number of links in the document",
+            ja: "ドキュメント中のリンク数"
+        },
+        "Number of Links": {
+            en: "Number of Links",
+            ja: "リンク数"
+        }
+    }
+};
+export const report: TextstatRuleReporter = function(context) {
     const { Syntax, report } = context;
+    const { t } = new Localize(meta.messages);
     let count = 0;
     return {
         [Syntax.Document]() {
@@ -14,10 +28,10 @@ const report: TextstatRuleReporter = function(context) {
         },
         [Syntax.Document + ":exit"](node) {
             report(node, {
-                message: "Number of links in the document",
+                message: t("message"),
                 data: [
                     {
-                        name: "number of Links",
+                        name: t("Number of Links"),
                         value: count
                     }
                 ]
@@ -25,4 +39,3 @@ const report: TextstatRuleReporter = function(context) {
         }
     };
 };
-export default report;
