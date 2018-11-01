@@ -2,10 +2,8 @@
     "extends": "../tsconfig.json",
     "compilerOptions": {
         "outDir": "../out",
-        "declaration": false
+        "declaration": false,
+        "noEmit": true
     },
-    "include": [
-        "../src/**/*",
-        "./**/*"
-    ]
+    "include": ["../src/**/*", "./**/*"]
 }
