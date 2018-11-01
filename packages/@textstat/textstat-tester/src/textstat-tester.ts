@@ -4,9 +4,10 @@ import { TextstatRuleReporter, TextstatRuleMeta } from "@textstat/rule-context";
 import * as fs from "fs";
 import * as path from "path";
 import * as assert from "assert";
+import { LocaleTag } from "@textstat/rule-context/lib/src/Localize";
 
 export function runTest(
-    snopshotDirectory: string,
+    snapshotDirectory: string,
     {
         rules,
         sharedDeps
@@ -20,17 +21,28 @@ export function runTest(
             options?: any;
         }[];
         sharedDeps?: {
-            filePathList: string[];
+            locale?: LocaleTag;
+            filePathList?: string[];
         };
     }
 ) {
     const textstat = new Textstat();
-    fs.readdirSync(snopshotDirectory).map(caseName => {
+    fs.readdirSync(snapshotDirectory).map(caseName => {
         const normalizedTestName = caseName.replace(/-/g, " ");
         it(`Test ${normalizedTestName}`, async () => {
-            const fixtureDir = path.join(snopshotDirectory, caseName);
+            const fixtureDir = path.join(snapshotDirectory, caseName);
             const actualFilePath = path.join(fixtureDir, "input.md");
             const actualContent = fs.readFileSync(actualFilePath, "utf-8");
+            const defaultSharedDeps = {
+                filePathList: [actualFilePath]
+            };
+            const sharedDepsOwn =
+                typeof sharedDeps === "object"
+                    ? {
+                          ...defaultSharedDeps,
+                          ...sharedDeps
+                      }
+                    : defaultSharedDeps;
             const actualResult = await textstat.report(actualContent, {
                 filePath: actualFilePath,
                 ext: path.extname(actualFilePath),
@@ -47,13 +59,11 @@ export function runTest(
                         plugin: require("@textlint/textlint-plugin-markdown")
                     }
                 ],
-                sharedDeps: sharedDeps || {
-                    filePathList: [actualFilePath]
-                }
+                sharedDeps: sharedDepsOwn
             });
             const cwdReplacer = (_key: string, value: string) => {
                 if (typeof value === "string") {
-                    return value.replace(snopshotDirectory, "<snapshot>").replace(/\\/g, "/");
+                    return value.replace(snapshotDirectory, "<snapshot>").replace(/\\/g, "/");
                 }
                 return value;
             };

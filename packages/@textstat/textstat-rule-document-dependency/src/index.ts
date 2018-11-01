@@ -31,7 +31,7 @@ export const meta = {
 };
 export const report: TextstatRuleReporter = function(context, _options, deps) {
     const { Syntax, report, getFilePath } = context;
-    const { t } = new Localize(meta.messages);
+    const { t } = new Localize(meta.messages, deps.locale);
     const toLinks: {
         type: "url" | "file";
         path: string;

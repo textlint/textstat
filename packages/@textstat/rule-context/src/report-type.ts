@@ -2,9 +2,12 @@ import { TextlintRuleOptions } from "@textlint/kernel";
 import RuleContext from "@textlint/kernel/lib/kernel/src/core/rule-context";
 import FilterRuleContext from "@textlint/kernel/lib/kernel/src/core/filter-rule-context";
 import { TxtNode, TxtNodeType } from "@textlint/kernel/lib/ast-node-types/src";
-import { LocalizeMessages } from "./Localize";
+import { LocaleTag, LocalizeMessages } from "./Localize";
 
 export type TextstatRuleSharedDependencies = {
+    // locale for message
+    // Default: en
+    locale?: LocaleTag;
     // target to stat
     filePathList: string[];
     // parser
@@ -13,6 +16,9 @@ export type TextstatRuleSharedDependencies = {
     };
 };
 
+/**
+ * Meta type
+ */
 export type TextstatRuleMeta = {
     docs: {
         homepage: string;

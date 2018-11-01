@@ -7,6 +7,7 @@ import {
 } from "@textlint/kernel";
 import { TextstatKernelFilterRule, TextstatKernelRule, TextstatRuleSharedDependencies } from "@textstat/rule-context";
 import * as path from "path";
+import { LocaleTag } from "@textstat/rule-context/lib/src/Localize";
 
 function bindTrailingArgs(fn: any, sharedDeps: TextstatRuleSharedDependencies) {
     return function(context: any, options?: any) {
@@ -46,6 +47,7 @@ export class Textstat {
             filterRules?: TextstatKernelFilterRule[];
             configBaseDir?: string;
             sharedDeps: {
+                locale?: LocaleTag;
                 filePathList: string[];
             };
         }
@@ -53,6 +55,7 @@ export class Textstat {
         const kernel = new TextlintKernel();
         const parserDeps = createParser(options.plugins);
         const sharedDependencies: TextstatRuleSharedDependencies = {
+            locale: options.sharedDeps.locale,
             filePathList: options.sharedDeps.filePathList,
             parser: parserDeps
         };

@@ -1,8 +1,8 @@
 // LICENSE : MIT
 "use strict";
-import { Localize, TextstatRuleMeta, TextstatRuleReporter } from "@textstat/rule-context";
+import { Localize, TextstatRuleReporter } from "@textstat/rule-context";
 
-export const meta: TextstatRuleMeta = {
+export const meta = {
     docs: require("../package.json"),
     messages: {
         message: {
@@ -15,9 +15,9 @@ export const meta: TextstatRuleMeta = {
         }
     }
 };
-export const report: TextstatRuleReporter = function(context) {
+export const report: TextstatRuleReporter = function(context, _options, deps) {
     const { Syntax, report } = context;
-    const { t } = new Localize(meta.messages);
+    const { t } = new Localize(meta.messages, deps.locale);
     let count = 0;
     return {
         [Syntax.Document]() {

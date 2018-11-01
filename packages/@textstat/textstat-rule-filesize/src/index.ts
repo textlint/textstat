@@ -1,10 +1,10 @@
 // LICENSE : MIT
 "use strict";
 import * as fs from "fs";
-import { Localize, TextstatRuleMeta, TextstatRuleReporter } from "@textstat/rule-context";
+import { Localize, TextstatRuleReporter } from "@textstat/rule-context";
 
 const fileSize = require("filesize");
-export const meta: TextstatRuleMeta = {
+export const meta = {
     docs: require("../package.json"),
     messages: {
         message: {
@@ -18,9 +18,9 @@ export const meta: TextstatRuleMeta = {
     }
 };
 
-export const report: TextstatRuleReporter = function(context) {
+export const report: TextstatRuleReporter = function(context, _options, deps) {
     const { Syntax, getFilePath, report } = context;
-    const { t } = new Localize(meta.messages);
+    const { t } = new Localize(meta.messages, deps.locale);
     return {
         [Syntax.Document](node) {
             const filePath = getFilePath();

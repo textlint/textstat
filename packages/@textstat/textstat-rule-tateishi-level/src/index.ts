@@ -1,4 +1,4 @@
-import { Localize, TextstatRuleMeta, TextstatRuleReporter } from "@textstat/rule-context";
+import { Localize, TextstatRuleReporter } from "@textstat/rule-context";
 import { elevateTateishi } from "./tateishi";
 import { getSentences } from "./sentence-util";
 import { TxtParentNode } from "@textlint/ast-node-types";
@@ -26,16 +26,16 @@ function average(numbers: number[]) {
     return total / numbers.length;
 }
 
-export const meta: TextstatRuleMeta = {
+export const meta = {
     docs: require("../package.json"),
     messages: {
         message: "読みやすさの偏差値",
         偏差値: "偏差値(平均50、標準偏差10、高いほど読みやすい)"
     }
 };
-export const report: TextstatRuleReporter = function(context) {
+export const report: TextstatRuleReporter = function(context, _options, deps) {
     const { Syntax, getSource, report } = context;
-    const { t } = new Localize(meta.messages);
+    const { t } = new Localize(meta.messages, deps.locale);
     let kutenCount = 0;
     let dokutenCount = 0;
     let results: {
