@@ -1,0 +1,14 @@
+{
+  //  THIS FILE IS FOR IDE/EDITOR
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    ".git",
+    "node_modules"
+  ]
+}

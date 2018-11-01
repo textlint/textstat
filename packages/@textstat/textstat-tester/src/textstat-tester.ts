@@ -1,5 +1,5 @@
-import { Textstat } from "@textstat/textstat";
-import { TextstatRuleReporter, TextstatRuleMeta } from "@textstat/rule-context";
+import { TextstatKernel } from "@textstat/kernel";
+import { TextstatKernelRule } from "@textstat/rule-context";
 
 import * as fs from "fs";
 import * as path from "path";
@@ -12,21 +12,14 @@ export function runTest(
         rules,
         sharedDeps
     }: {
-        rules: {
-            ruleId: string;
-            rule: {
-                meta: TextstatRuleMeta;
-                report: TextstatRuleReporter;
-            };
-            options?: any;
-        }[];
+        rules: TextstatKernelRule[];
         sharedDeps?: {
             locale?: LocaleTag;
             filePathList?: string[];
         };
     }
 ) {
-    const textstat = new Textstat();
+    const textstat = new TextstatKernel();
     fs.readdirSync(snapshotDirectory).map(caseName => {
         const normalizedTestName = caseName.replace(/-/g, " ");
         it(`Test ${normalizedTestName}`, async () => {
@@ -46,13 +39,7 @@ export function runTest(
             const actualResult = await textstat.report(actualContent, {
                 filePath: actualFilePath,
                 ext: path.extname(actualFilePath),
-                rules: rules.map(rule => {
-                    return {
-                        ruleId: rule.ruleId,
-                        rule: rule.rule.report,
-                        options: rule.options
-                    };
-                }),
+                rules: rules,
                 plugins: [
                     {
                         pluginId: "markdown",

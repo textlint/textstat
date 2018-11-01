@@ -10,7 +10,7 @@
       "path": "../rule-context/tsconfig.json"
     },
     {
-      "path": "../textstat/tsconfig.json"
+      "path": "../kernel/tsconfig.json"
     },
     {
       "path": "../textstat-tester/tsconfig.json"

@@ -35,7 +35,10 @@ export type TextstatRuleReporter = (
 
 export interface TextstatKernelRule {
     ruleId: string;
-    rule: TextstatRuleReporter;
+    rule: {
+        meta: TextstatRuleMeta;
+        report: TextstatRuleReporter;
+    };
     options?: TextlintRuleOptions | boolean;
 }
 
@@ -47,6 +50,9 @@ export type TextstatFilterRuleReporter = (
 
 export interface TextstatKernelFilterRule {
     ruleId: string;
-    rule: TextstatFilterRuleReporter;
+    rule: {
+        meta: TextstatRuleMeta;
+        report: TextstatFilterRuleReporter;
+    };
     options?: TextlintRuleOptions | boolean;
 }

@@ -1,16 +1,39 @@
 # @textstat/textstat
 
-textstat core
+textstat kernel.
+
+This kernel module is same position with [@textlint/kernel](https://github.com/textlint/textlint/tree/master/packages/%40textlint/kernel).
 
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
 
-    npm install @textstat/textstat
+    npm install @textstat/kernel
 
 ## Usage
 
-- [ ] Write usage instructions
+```ts
+const kernel = new TextstatKernel();
+const result = await kernel.report(`# Header
+
+This is example.
+`, {
+    rules: [{
+        ruleId: "textstat-rule-example",
+        rule: rule
+    }],
+    plugins: [{
+        pluginId: "markdown",
+        plugin: require("@textlint/textlint-plugin-markdown")
+    }],
+    filterRules: [],
+    sharedDeps: {
+        filePathList: ["/path/to/example.md", "/path/to/example.a.md"]
+    },
+    filePath: "/path/to/example.md",
+    ext: ".md"
+});
+```
 
 ## Changelog
 

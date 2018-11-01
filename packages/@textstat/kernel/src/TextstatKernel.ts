@@ -36,7 +36,7 @@ export const createParser = (plugins: TextlintKernelPlugin[] = []) => {
     };
 };
 
-export class Textstat {
+export class TextstatKernel {
     report(
         text: string,
         options: {
@@ -67,17 +67,18 @@ export class Textstat {
                 options.rules &&
                 options.rules.map(rule => {
                     return {
-                        ...rule,
-                        rule: bindTrailingArgs(rule.rule, sharedDependencies)
+                        ruleId: rule.ruleId,
+                        rule: bindTrailingArgs(rule.rule.report, sharedDependencies),
+                        options: rule.options
                     };
                 }),
             filterRules:
                 options.filterRules &&
                 options.filterRules.map(rule => {
                     return {
-                        ...rule,
-                        rule: bindTrailingArgs(rule.rule, sharedDependencies),
-                        parser: parserDeps
+                        ruleId: rule.ruleId,
+                        rule: bindTrailingArgs(rule.rule.report, sharedDependencies),
+                        options: rule.options
                     };
                 }),
             plugins: options.plugins

@@ -561,7 +561,7 @@
     object-assign "^4.1.1"
     structured-source "^3.0.2"
 
-"@textlint/markdown-to-ast@^6.0.8":
+"@textlint/markdown-to-ast@^6.0.8", "@textlint/markdown-to-ast@^6.0.9":
   version "6.0.9"
   resolved "https://registry.npmjs.org/@textlint/markdown-to-ast/-/markdown-to-ast-6.0.9.tgz#e7c89e5ad15d17dcd8e5a62758358936827658fa"
   dependencies:
@@ -578,6 +578,12 @@
   resolved "http://registry.npmjs.org/@textlint/textlint-plugin-markdown/-/textlint-plugin-markdown-4.0.10.tgz#a99b4a308067597e89439a9e87bc1c4a7f4d076b"
   dependencies:
     "@textlint/markdown-to-ast" "^6.0.8"
+
+"@textlint/textlint-plugin-markdown@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.npmjs.org/@textlint/textlint-plugin-markdown/-/textlint-plugin-markdown-5.0.1.tgz#edc4aa84302596d7aea5b67a91333b9caa8dc658"
+  dependencies:
+    "@textlint/markdown-to-ast" "^6.0.9"
 
 "@types/bluebird@^3.5.18":
   version "3.5.24"
