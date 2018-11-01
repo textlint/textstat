@@ -3,11 +3,12 @@ import {
     TextlintKernelPlugin,
     TextlintResult,
     TextlintPluginDescriptors,
-    TextlintPluginDescriptor
+    TextlintPluginDescriptor,
+    TextlintRuleOptions
 } from "@textlint/kernel";
 import { TextstatKernelFilterRule, TextstatKernelRule, TextstatRuleSharedDependencies } from "@textstat/rule-context";
 import * as path from "path";
-import { LocaleTag } from "@textstat/rule-context/lib/src/Localize";
+import { LocaleTag } from "@textstat/rule-context";
 
 function bindTrailingArgs(fn: any, sharedDeps: TextstatRuleSharedDependencies) {
     return function(context: any, options?: any) {
@@ -35,6 +36,38 @@ export const createParser = (plugins: TextlintKernelPlugin[] = []) => {
         }
     };
 };
+
+type TextstatRulePreset = {
+    rules: { [index: string]: TextstatKernelRule };
+    rulesConfig: { [index: string]: TextlintRuleOptions | boolean };
+};
+type TextSTateRulePresetFactory = {
+    createPreset: () => TextstatRulePreset;
+};
+
+// @ts-ignore
+function isRulePresetFactory(v: any): v is TextSTateRulePresetFactory {
+    return typeof v === "object" && v.createPreset === "function";
+}
+
+// @ts-ignore
+function createTextstatPresetToTextlintPreset(
+    preset: TextstatRulePreset,
+    sharedDependencies: TextstatRuleSharedDependencies
+) {
+    const rules = Object.keys(preset.rules).map(key => {
+        const rule = preset.rules[key];
+        return {
+            ruleId: rule.ruleId,
+            rule: bindTrailingArgs(rule.rule.report, sharedDependencies),
+            options: rule.options
+        };
+    });
+    return {
+        rules,
+        rulesConfig: preset.rulesConfig
+    };
+}
 
 export class TextstatKernel {
     report(

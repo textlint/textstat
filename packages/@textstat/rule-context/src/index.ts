@@ -6,4 +6,4 @@ export {
     TextstatRuleMeta
 } from "./report-type";
 
-export { Localize } from "./Localize";
+export { Localize, LocaleTag } from "./Localize";

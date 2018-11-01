@@ -1,0 +1,66 @@
+{
+  "name": "@textstat/textstat-rule-preset-standard",
+  "version": "1.0.0",
+  "description": "Standard Presets.",
+  "keywords": [
+    "textstatrule"
+  ],
+  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat-rule-preset-standard/",
+  "bugs": {
+    "url": "https://github.com/textlint/textstat/issues"
+  },
+  "license": "MIT",
+  "author": "azu",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "main": "lib/src/textstat-rule-preset-standard.js",
+  "types": "lib/src/textstat-rule-preset-standard.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/textlint/textstat.git"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production tsc --build",
+    "clean": "rimraf lib/",
+    "prepublish": "npm run --if-present build",
+    "test": "mocha \"test/**/*.ts\"",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "watch": "tsc --build --watch"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": false,
+    "tabWidth": 4
+  },
+  "dependencies": {
+    "@textstat/textstat-rule-filesize": "^1.0.0",
+    "@textstat/textstat-rule-document-dependency": "^1.0.0",
+    "@textstat/textstat-rule-number-of-characters": "^1.0.0",
+    "@textstat/textstat-rule-number-of-images": "^1.0.0",
+    "@textstat/textstat-rule-number-of-links": "^1.0.0",
+    "@textstat/textstat-rule-number-of-list-items": "^1.0.0",
+    "@textstat/textstat-rule-number-of-paragraphs": "^1.0.0",
+    "@textstat/textstat-rule-number-of-sentences": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.1",
+    "cross-env": "^5.2.0",
+    "mocha": "^5.2.0",
+    "prettier": "^1.8.1",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "ts-node-test-register": "^4.0.0",
+    "typescript": "^3.1.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
