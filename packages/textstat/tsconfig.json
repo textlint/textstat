@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./lib/",
+    "composite": true
+  },
+  "references": [
+    {
+      "path": "../@textstat/rule-context/tsconfig.json"
+    },
+    {
+      "path": "../@textstat/kernel/tsconfig.json"
+    },
+    {
+      "path": "../@textstat/textstat-rule-preset-standard/tsconfig.json"
+    }
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    ".git",
+    "node_modules"
+  ]
+}

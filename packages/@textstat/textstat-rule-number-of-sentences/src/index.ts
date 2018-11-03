@@ -4,7 +4,7 @@ import { Localize, TextstatRuleReporter } from "@textstat/rule-context";
 import { splitAST, Syntax as SentenceSyntax } from "sentence-splitter";
 
 export const meta = {
-    docs: require("../package.json"),
+    docs: {},
     messages: {
         message: {
             en: "Number of sentences in the document",

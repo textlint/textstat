@@ -3,7 +3,7 @@
 import { Localize, TextstatRuleReporter } from "@textstat/rule-context";
 
 export const meta = {
-    docs: require("../package.json"),
+    docs: {},
     messages: {
         message: {
             en: "Number of links in the document",
@@ -29,7 +29,7 @@ export const report: TextstatRuleReporter = function(context, _options, deps) {
         [Syntax.Document + ":exit"](node) {
             report(node, {
                 message: t("message"),
-                data: [
+                details: [
                     {
                         name: t("Number of Links"),
                         value: count

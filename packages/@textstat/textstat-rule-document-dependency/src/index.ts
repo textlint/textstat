@@ -11,8 +11,8 @@ const stripHash = (pathString: string) => {
 };
 export const meta = {
     docs: {
-        homepage: require("../package.json").homepage,
-        description: require("../package.json").description
+        homepage: {},
+        description: {}
     },
     messages: {
         message: {
@@ -29,6 +29,8 @@ export const meta = {
         }
     }
 };
+
+const cacheMap = new Map<string, string[]>();
 export const report: TextstatRuleReporter = function(context, _options, deps) {
     const { Syntax, report, getFilePath } = context;
     const { t } = new Localize(meta.messages, deps.locale);
@@ -62,13 +64,25 @@ export const report: TextstatRuleReporter = function(context, _options, deps) {
             path: baseFilePath
         });
     };
-    deps.filePathList.forEach(fromFilePath => {
+    const getLinkFromFilePath = (fromFilePath: string) => {
+        if (cacheMap.has(fromFilePath)) {
+            return cacheMap.get(fromFilePath) as string[];
+        }
         const text = fs.readFileSync(fromFilePath, "utf-8");
         const AST = deps.parser.parse(text, fromFilePath);
+        const urls: string[] = [];
         visit(AST, [Syntax.Link, "Definition"], (node: any) => {
-            addFromLink(fromFilePath, node.url);
+            urls.push(node.url);
         });
-    });
+        cacheMap.set(fromFilePath, urls);
+        return urls;
+    };
+    const fromLinkHandle = (fromFilePath: string) => {
+        getLinkFromFilePath(fromFilePath).forEach(url => {
+            addFromLink(fromFilePath, url);
+        });
+    };
+    deps.filePathList.forEach(fromLinkHandle);
     /**
      * Add "The document to" link
      * @param urlString

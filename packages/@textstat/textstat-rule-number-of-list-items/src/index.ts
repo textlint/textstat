@@ -3,7 +3,7 @@
 import { Localize, TextstatRuleReporter } from "@textstat/rule-context";
 
 export const meta = {
-    docs: require("../package.json"),
+    docs: {},
     messages: {
         message: {
             en: "Number of list items in the document",

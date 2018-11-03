@@ -1,10 +1,15 @@
-import { TextstatKernelRule } from "../lib/src";
 import { TextlintRuleOptions } from "@textlint/kernel";
+import { TextstatRuleMeta, TextstatRuleReporter } from "./report-type";
 /**
  * Textstat Rule preset
  */
 export type TextstatRulePreset = {
-    rules: { [index: string]: TextstatKernelRule };
+    rules: {
+        [index: string]: {
+            meta: TextstatRuleMeta;
+            report: TextstatRuleReporter;
+        };
+    };
     rulesConfig: { [index: string]: TextlintRuleOptions | boolean };
 };
 

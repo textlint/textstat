@@ -3,9 +3,9 @@
 import * as fs from "fs";
 import { Localize, TextstatRuleReporter } from "@textstat/rule-context";
 
-const fileSize = require("filesize");
+// const fileSize = require("filesize");
 export const meta = {
-    docs: require("../package.json"),
+    docs: {},
     messages: {
         message: {
             en: "File size",
@@ -35,7 +35,7 @@ export const report: TextstatRuleReporter = function(context, _options, deps) {
                 details: [
                     {
                         name: t("File size"),
-                        value: fileSize(fileSizeInBytes)
+                        value: fileSizeInBytes
                     }
                 ]
             });

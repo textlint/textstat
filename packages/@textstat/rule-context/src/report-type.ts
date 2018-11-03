@@ -21,8 +21,8 @@ export type TextstatRuleSharedDependencies = {
  */
 export type TextstatRuleMeta = {
     docs: {
-        homepage: string;
-        description: string;
+        homepage?: string;
+        description?: string;
     };
     messages: LocalizeMessages;
 };

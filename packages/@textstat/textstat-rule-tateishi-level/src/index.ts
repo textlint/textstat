@@ -27,7 +27,7 @@ function average(numbers: number[]) {
 }
 
 export const meta = {
-    docs: require("../package.json"),
+    docs: {},
     messages: {
         message: "読みやすさの偏差値",
         偏差値: "偏差値(平均50、標準偏差10、高いほど読みやすい)"
