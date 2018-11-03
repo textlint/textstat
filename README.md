@@ -38,6 +38,14 @@ Show result for each node
 - Sentence
 - Word?
 
+それぞれのViewで表現方法が異なる
+
+- [小説推敲補助ソフト「Novel Supporter」 - クロノス・クラウン -](https://crocro.com/pc/soft/novel_supporter/)
+- Documentはcompose可能
+- Sectionはサイドバーへ
+- Paragraphはドキュメント上へ
+- Inlineはドキュメント上へ
+
 ## その他
 
 > 照応 省略 解析、
