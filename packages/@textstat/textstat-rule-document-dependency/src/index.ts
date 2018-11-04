@@ -35,14 +35,18 @@ export const report: TextstatRuleReporter = function(context, _options, deps) {
     const { Syntax, report, getFilePath } = context;
     const { t } = new Localize(meta.messages, deps.locale);
     const toLinks: {
-        type: "url" | "file";
+        type: "url" | "file" | "document";
         path: string;
     }[] = [];
     const fromLinks: {
-        type: "file";
+        type: "file" | "document";
         path: string;
     }[] = [];
     const currentFilePath = getFilePath();
+    const currentDocumentExt = currentFilePath ? path.extname(currentFilePath) : "";
+    const isDocumentType = (filePath: string) => {
+        return currentDocumentExt === path.extname(filePath);
+    };
     /**
      * Add "From to the document" link
      * @param baseFilePath
@@ -60,7 +64,7 @@ export const report: TextstatRuleReporter = function(context, _options, deps) {
             return;
         }
         fromLinks.push({
-            type: "file",
+            type: isDocumentType(baseFilePath) ? "document" : "file",
             path: baseFilePath
         });
     };
@@ -72,7 +76,9 @@ export const report: TextstatRuleReporter = function(context, _options, deps) {
         const AST = deps.parser.parse(text, fromFilePath);
         const urls: string[] = [];
         visit(AST, [Syntax.Link, "Definition"], (node: any) => {
-            urls.push(node.url);
+            if (!(node.identifier && /^\^/.test(node.identifier))) {
+                urls.push(node.url);
+            }
         });
         cacheMap.set(fromFilePath, urls);
         return urls;
@@ -98,7 +104,7 @@ export const report: TextstatRuleReporter = function(context, _options, deps) {
             });
         } else if (currentFilePath) {
             toLinks.push({
-                type: "file",
+                type: isDocumentType(stripHash(urlString)) ? "document" : "file",
                 path: path.resolve(path.dirname(currentFilePath), stripHash(urlString))
             });
         }

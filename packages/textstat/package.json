@@ -48,7 +48,8 @@
     "@types/json2csv":  "^4.2.0",
     "@textstat/kernel": "^1.0.0",
     "@textstat/rule-context": "^1.0.0",
-    "@textstat/textstat-rule-preset-standard": "^1.0.0"
+    "@textstat/textstat-rule-preset-standard": "^1.0.0",
+    "common-path-prefix": "^1.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",

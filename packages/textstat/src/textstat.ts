@@ -17,8 +17,8 @@ function createTextstatPresetToTextlintPreset(preset: TextstatRulePreset) {
     });
 }
 
-export async function run(globPattern: string) {
-    const fileList = glob.sync(globPattern);
+export async function run(globPattern: string | string[]) {
+    const fileList = Array.isArray(globPattern) ? globPattern : glob.sync(globPattern);
     const textstat = new TextstatKernel();
     const promises = fileList.map((filePath: string) => {
         const text = fs.readFileSync(filePath, "utf-8");
