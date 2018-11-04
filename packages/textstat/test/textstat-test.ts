@@ -55,6 +55,7 @@ export function format(results: TextlintResult[]) {
 //
 describe("run", function() {
     it("work", async () => {
+        // TODO: hardcode
         const filePathList = [
             "/Users/azu/.ghq/github.com/asciidwango/js-primer/source/index.md",
             "/Users/azu/.ghq/github.com/asciidwango/js-primer/source/intro/goal/README.md",
