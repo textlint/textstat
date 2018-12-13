@@ -1,6 +1,6 @@
 {
   "name": "textstat",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "textstat is statistic engine for text documents.",
   "keywords": [
     "textlint",
@@ -45,8 +45,8 @@
   },
   "dependencies": {
     "@textstat/kernel": "^0.6.1",
-    "@textstat/rule-context": "^0.6.0",
-    "@textstat/textstat-rule-preset-standard": "^0.6.1",
+    "@textstat/rule-context": "^0.6.2",
+    "@textstat/textstat-rule-preset-standard": "^0.6.2",
     "@types/globby": "^8.0.0",
     "@types/json2csv": "^4.2.0",
     "@types/lodash.uniq": "^4.5.0",
