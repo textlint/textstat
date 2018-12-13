@@ -1,6 +1,6 @@
 {
   "name": "@textstat/textstat-tester",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "description": "Test framework for textstat rules.",
   "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/textstat-tester/",
   "bugs": {
@@ -37,8 +37,8 @@
   },
   "dependencies": {
     "@textlint/textlint-plugin-markdown": "^4.0.4",
-    "@textstat/kernel": "^0.6.1",
-    "@textstat/rule-context": "^0.6.2"
+    "@textstat/kernel": "^0.7.0",
+    "@textstat/rule-context": "^0.7.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",

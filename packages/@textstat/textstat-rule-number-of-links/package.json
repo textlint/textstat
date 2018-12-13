@@ -1,6 +1,6 @@
 {
   "name": "@textstat/textstat-rule-number-of-links",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "description": "Report file size",
   "keywords": [
     "textstatrule"
@@ -40,10 +40,10 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "@textstat/rule-context": "^0.6.2"
+    "@textstat/rule-context": "^0.7.0"
   },
   "devDependencies": {
-    "@textstat/textstat-tester": "^0.6.2",
+    "@textstat/textstat-tester": "^0.7.0",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.0",
     "cross-env": "^5.1.3",
