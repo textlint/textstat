@@ -1,0 +1,7 @@
+[build]
+  command = "yarn run bootstrap && yarn run netlify"
+  publish = "packages/@textstat/textstat-view/build"
+
+[build.environment]
+  NODE_VERSION = "--lts=dubnium"
+  YARN_VERSION = "1.12.3"
