@@ -1,6 +1,6 @@
 {
   "name": "@textstat/textstat-view",
-  "version": "0.1.0",
+  "version": "0.6.0",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
@@ -19,11 +19,11 @@
     "extends": "react-app"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.6",
     "@types/jest": "23.3.10",
     "@types/node": "10.12.12",
     "@types/react": "16.7.13",
     "@types/react-dom": "16.0.11",
-    "@types/classnames": "^2.2.6",
     "classnames": "^2.2.6",
     "common-path-prefix": "^1.0.0",
     "navi": "^0.8.0",
@@ -37,11 +37,11 @@
   },
   "devDependencies": {
     "@types/react-plotly.js": "^2.2.2",
-    "navi-scripts": "^0.8.0",
+    "cross-env": "^5.2.0",
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
-    "prettier": "^1.15.3",
-    "cross-env": "^5.2.0"
+    "navi-scripts": "^0.8.0",
+    "prettier": "^1.15.3"
   },
   "browserslist": [
     ">0.2%",

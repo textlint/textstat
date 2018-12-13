@@ -1,6 +1,6 @@
 {
   "name": "@textstat/textstat-rule-document-dependency",
-  "version": "1.0.0",
+  "version": "0.6.0",
   "description": "Report document dependencies.",
   "keywords": [
     "textstatrule"
@@ -39,12 +39,12 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "@textstat/rule-context": "^1.0.0",
+    "@textstat/rule-context": "^0.6.0",
     "is-url": "^1.2.4",
     "unist-util-visit": "^1.4.0"
   },
   "devDependencies": {
-    "@textstat/textstat-tester": "^1.0.0",
+    "@textstat/textstat-tester": "^0.6.0",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.0",
     "cross-env": "^5.1.3",

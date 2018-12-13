@@ -1,6 +1,6 @@
 {
   "name": "@textstat/textstat-rule-preset-standard",
-  "version": "1.0.0",
+  "version": "0.6.0",
   "description": "Standard Presets.",
   "keywords": [
     "textstatrule"
@@ -40,14 +40,14 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "@textstat/textstat-rule-filesize": "^1.0.0",
-    "@textstat/textstat-rule-document-dependency": "^1.0.0",
-    "@textstat/textstat-rule-number-of-characters": "^1.0.0",
-    "@textstat/textstat-rule-number-of-images": "^1.0.0",
-    "@textstat/textstat-rule-number-of-links": "^1.0.0",
-    "@textstat/textstat-rule-number-of-list-items": "^1.0.0",
-    "@textstat/textstat-rule-number-of-paragraphs": "^1.0.0",
-    "@textstat/textstat-rule-number-of-sentences": "^1.0.0"
+    "@textstat/textstat-rule-document-dependency": "^0.6.0",
+    "@textstat/textstat-rule-filesize": "^0.6.0",
+    "@textstat/textstat-rule-number-of-characters": "^0.6.0",
+    "@textstat/textstat-rule-number-of-images": "^0.6.0",
+    "@textstat/textstat-rule-number-of-links": "^0.6.0",
+    "@textstat/textstat-rule-number-of-list-items": "^0.6.0",
+    "@textstat/textstat-rule-number-of-paragraphs": "^0.6.0",
+    "@textstat/textstat-rule-number-of-sentences": "^0.6.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",

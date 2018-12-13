@@ -1,6 +1,6 @@
 {
   "name": "@textstat/rule-context",
-  "version": "1.0.0",
+  "version": "0.6.0",
   "description": "RuleContext for textstat.",
   "keywords": [
     "textstat"
