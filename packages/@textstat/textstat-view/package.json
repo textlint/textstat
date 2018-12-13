@@ -1,5 +1,5 @@
 {
-  "name": "@textstat/textstat-viewer",
+  "name": "@textstat/textstat-view",
   "version": "0.1.0",
   "private": true,
   "scripts": {
