@@ -1,6 +1,6 @@
 {
   "name": "@textstat/kernel",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "textstat kernel. Work browser and node.js",
   "keywords": [
     "textstat"
