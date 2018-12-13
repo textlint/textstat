@@ -10,8 +10,8 @@ export const AppMenu = () => {
             path: "/"
         },
         {
-            title: "filesize",
-            path: "/textstat-rule-filesize/"
+            title: "Number of characters",
+            path: "/textstat-rule-number-of-characters/"
         },
         {
             title: "document-dependency",

@@ -1,5 +1,6 @@
 import * as React from "react";
 import Plot from "react-plotly.js";
+import { trimCommonPrefix } from "../../helper/trim-common-prefix";
 
 export interface FileSizeViewProps {
     results: {
@@ -16,14 +17,9 @@ export interface FileSizeViewProps {
     }[];
 }
 
-const ruleId = "textstat-rule-filesize";
-const commonPathPrefix = require("common-path-prefix");
-const trimCommonPrefix = (items: string[]): string[] => {
-    const prefix: string = commonPathPrefix(items);
-    return items.map(item => item.replace(prefix, "").replace(/\/README.md$/, ""));
-};
+const ruleId = "textstat-rule-number-of-characters";
 
-export function FileSizeView(props: FileSizeViewProps) {
+export function NumberOfCharactersView(props: FileSizeViewProps) {
     const labels = trimCommonPrefix(
         props.results.map(result => {
             return result.filePath;

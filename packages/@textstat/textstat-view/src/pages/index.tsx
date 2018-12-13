@@ -18,9 +18,9 @@ export default createSwitch({
             title: "textstat-rule-document-dependency",
             getContent: () => import("./textstat-rule-document-dependency")
         }),
-        "/textstat-rule-filesize": createPage({
-            title: "textstat-rule-filesize",
-            getContent: () => import("./textstat-rule-filesize")
+        "/textstat-rule-number-of-characters": createPage({
+            title: "textstat-rule-number-of-characters",
+            getContent: () => import("./textstat-rule-number-of-characters")
         })
     }
 });
