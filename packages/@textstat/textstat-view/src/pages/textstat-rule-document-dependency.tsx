@@ -1,7 +1,7 @@
 // pages/reference.js
 import * as React from "react";
-import { DocumentDependencyView } from "../components/DocumentDependencyView/DocumentDependencyView";
 import { StatContext } from "../context/StatContext";
+import { DocumentDependencyView } from "../components/DocumentDependencyView/DocumentDependencyView";
 
 export default function TextstatRuleDocumentDependency() {
     return (

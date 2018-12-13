@@ -1,6 +1,5 @@
-import { createPage, createSwitch } from "navi";
 import * as React from "react";
-import { NavLink } from "react-navi";
+import { createPage, createSwitch } from "navi";
 
 export default createSwitch({
     paths: {

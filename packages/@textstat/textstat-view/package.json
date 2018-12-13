@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "react-scripts build",
+    "build:navi": "cross-env REACT_APP_NAVI=true navi-scripts build",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
     "test": "react-scripts test",
@@ -36,9 +37,11 @@
   },
   "devDependencies": {
     "@types/react-plotly.js": "^2.2.2",
+    "navi-scripts": "^0.8.0",
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
-    "prettier": "^1.15.3"
+    "prettier": "^1.15.3",
+    "cross-env": "^5.2.0"
   },
   "browserslist": [
     ">0.2%",
