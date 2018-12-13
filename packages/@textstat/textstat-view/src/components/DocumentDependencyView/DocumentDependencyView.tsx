@@ -46,10 +46,9 @@ export function DocumentDependencyView(props: DocumentDependencyViewProps) {
                 return;
             }
             message.data.details.forEach(detail => {
-                if (!props.reverse && detail.name !== "To Links") {
-                    return;
-                }
-                if (props.reverse && detail.name !== "From Links") {
+                const displayToLink = !props.reverse && detail.name === "To Links";
+                const displayFromLink = props.reverse && detail.name === "From Links";
+                if (!displayToLink && !displayFromLink) {
                     return;
                 }
                 detail.value.forEach(value => {
