@@ -1,10 +1,9 @@
-import { TextstatKernel } from "@textstat/kernel";
-import * as path from "path";
 import * as fs from "fs";
-import { createPreset } from "@textstat/textstat-rule-preset-standard";
+import * as path from "path";
+import { TextstatKernel } from "@textstat/kernel";
 import { TextstatRulePreset } from "@textstat/rule-context";
-
-const glob = require("glob");
+import { createPreset } from "@textstat/textstat-rule-preset-standard";
+import globby from "globby";
 
 function createTextstatPresetToTextlintPreset(preset: TextstatRulePreset) {
     return Object.keys(preset.rules).map(key => {
@@ -17,8 +16,13 @@ function createTextstatPresetToTextlintPreset(preset: TextstatRulePreset) {
     });
 }
 
-export async function run(globPattern: string | string[]) {
-    const fileList = Array.isArray(globPattern) ? globPattern : glob.sync(globPattern);
+export interface ReportOptions {
+    locale: string;
+    globPatterns: string[];
+}
+
+export async function report(options: ReportOptions) {
+    const fileList = await globby(options.globPatterns);
     const textstat = new TextstatKernel();
     const promises = fileList.map((filePath: string) => {
         const text = fs.readFileSync(filePath, "utf-8");
@@ -34,7 +38,7 @@ export async function run(globPattern: string | string[]) {
             ],
             sharedDeps: {
                 filePathList: fileList,
-                locale: "en"
+                locale: options.locale
             }
         });
     });

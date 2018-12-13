@@ -1,6 +1,6 @@
 {
   "name": "textstat",
-  "version": "1.0.0",
+  "version": "0.6.0",
   "description": "textstat is statistic engine for text documents.",
   "keywords": [
     "textlint",
@@ -17,8 +17,11 @@
     "lib/",
     "src/"
   ],
-  "main": "lib/textstat.js",
-  "types": "lib/textstat.d.ts",
+  "main": "lib/src/textstat.js",
+  "types": "lib/src/textstat.d.ts",
+  "bin": {
+    "textstat": "bin/cmd.js"
+  },
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -41,11 +44,14 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "glob": "^7.1.3",
-    "json2csv":  "^4.2.1",
-    "lodash.uniq":  "^4.5.0",
-    "@types/lodash.uniq":  "^4.5.0",
-    "@types/json2csv":  "^4.2.0",
+    "meow": "^5.0.0",
+    "os-locale": "^3.0.1",
+    "globby": "^8.0.1",
+    "@types/globby": "^8.0.0",
+    "json2csv": "^4.2.1",
+    "lodash.uniq": "^4.5.0",
+    "@types/lodash.uniq": "^4.5.0",
+    "@types/json2csv": "^4.2.0",
     "@textstat/kernel": "^1.0.0",
     "@textstat/rule-context": "^1.0.0",
     "@textstat/textstat-rule-preset-standard": "^1.0.0",

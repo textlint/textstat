@@ -8,7 +8,7 @@ export interface TextstatMessage {
     ruleId: string;
     message: string;
     // optional data
-    data?: {
+    data: {
         message: string;
         range: [number, number];
         details: {

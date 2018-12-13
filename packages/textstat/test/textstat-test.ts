@@ -1,4 +1,4 @@
-import { run } from "../src/textstat";
+import { report } from "../src/textstat";
 import { TextlintResult } from "@textlint/kernel";
 import * as fs from "fs";
 //
@@ -110,7 +110,9 @@ describe("run", function() {
             "/Users/azu/.ghq/github.com/asciidwango/js-primer/source/use-case/todoapp/update-delete/README.md",
             "/Users/azu/.ghq/github.com/asciidwango/js-primer/source/use-case/todoapp/final/README.md"
         ];
-        const results: any = await run(filePathList);
+        const results: any = await report({
+            globPatterns: filePathList
+        });
         fs.writeFileSync(__dirname + "/out.json", JSON.stringify(results));
         fs.writeFileSync(__dirname + "/out.csv", format(results));
         // result.messages.forEach(message => {

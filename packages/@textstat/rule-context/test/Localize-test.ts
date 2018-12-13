@@ -13,6 +13,10 @@ describe("Localize", function() {
         const { t } = new Localize(messages);
         assert.strictEqual(t("simple"), messages.simple.en);
     });
+    it("should return ja message for ja-JP", () => {
+        const { t } = new Localize(messages, "ja-JP");
+        assert.strictEqual(t("simple"), messages.simple.ja);
+    });
     it("should return js message by locale option", () => {
         const { t } = new Localize(messages, "ja");
         assert.strictEqual(t("simple"), messages.simple.ja);
