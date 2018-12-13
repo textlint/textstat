@@ -4,7 +4,7 @@ import Plot from "react-plotly.js";
 const commonPathPrefix = require("common-path-prefix");
 
 export interface DocumentDependencyViewProps {
-    fromLink?: boolean;
+    reverse?: boolean;
     results: {
         filePath: string;
         messages: {
@@ -46,10 +46,10 @@ export function DocumentDependencyView(props: DocumentDependencyViewProps) {
                 return;
             }
             message.data.details.forEach(detail => {
-                if (props.fromLink && detail.name !== "To Links") {
+                if (!props.reverse && detail.name !== "To Links") {
                     return;
                 }
-                if (!props.fromLink && detail.name !== "From Links") {
+                if (props.reverse && detail.name !== "From Links") {
                     return;
                 }
                 detail.value.forEach(value => {
