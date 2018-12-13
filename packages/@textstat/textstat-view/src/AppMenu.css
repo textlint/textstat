@@ -1,0 +1,22 @@
+.AppMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    border-right: 1px solid #d7dbdd;
+    background-color: #fcfdfd;
+    padding: 10px;
+    list-style: none;
+}
+
+.AppMenu-listItem {
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #16a2d7;
+    font-size: 12px;
+}
+
+.AppMenu-listItem.is-current {
+    background-color: #eef3f5;
+    border-radius: 4px;
+}
