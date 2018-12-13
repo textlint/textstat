@@ -14,7 +14,7 @@ export interface TextstatMessage {
         details: {
             name: string;
             value: any;
-        };
+        }[];
     };
     // FixCommand is not defined in stat
     fix?: undefined;
