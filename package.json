@@ -36,8 +36,16 @@
       "git add"
     ]
   },
-  "workspaces": [
-    "packages/*",
-    "packages/@textstat/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/@textstat/*"
+    ],
+    "nohoist": [
+      "**/@types/mocha",
+      "**/@types/mocha/**",
+      "**/@types/jest",
+      "**/@types/jest/**"
+    ]
+  }
 }
