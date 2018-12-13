@@ -19,7 +19,7 @@
                         "name": "To Links",
                         "value": [
                             {
-                                "type": "file",
+                                "type": "document",
                                 "path": "<snapshot>/from-to-link/a.md"
                             }
                         ]
@@ -28,11 +28,11 @@
                         "name": "From Links",
                         "value": [
                             {
-                                "type": "file",
+                                "type": "document",
                                 "path": "<snapshot>/from-to-link/a.md"
                             },
                             {
-                                "type": "file",
+                                "type": "document",
                                 "path": "<snapshot>/from-to-link/b.md"
                             }
                         ]

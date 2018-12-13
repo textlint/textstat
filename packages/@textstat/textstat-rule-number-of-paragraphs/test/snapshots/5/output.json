@@ -9,6 +9,10 @@
             "column": 1,
             "severity": 2,
             "data": {
+                "range": [
+                    0,
+                    59
+                ],
                 "message": "Number of paragraphs in the document",
                 "details": [
                     {

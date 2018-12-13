@@ -1,7 +1,6 @@
 import {
     TextlintKernel,
     TextlintKernelPlugin,
-    TextlintResult,
     TextlintPluginDescriptors,
     TextlintPluginDescriptor,
     TextlintRuleOptions
@@ -9,6 +8,8 @@ import {
 import { TextstatKernelFilterRule, TextstatKernelRule, TextstatRuleSharedDependencies } from "@textstat/rule-context";
 import * as path from "path";
 import { LocaleTag } from "@textstat/rule-context";
+import { validateResult } from "./ResultValidator";
+import { TextstatResult } from "./type";
 
 function bindTrailingArgs(fn: any, sharedDeps: TextstatRuleSharedDependencies) {
     return function(context: any, options?: any) {
@@ -84,7 +85,7 @@ export class TextstatKernel {
                 filePathList: string[];
             };
         }
-    ): Promise<TextlintResult> {
+    ): Promise<TextstatResult> {
         const kernel = new TextlintKernel();
         const parserDeps = createParser(options.plugins);
         const sharedDependencies: TextstatRuleSharedDependencies = {
@@ -92,29 +93,36 @@ export class TextstatKernel {
             filePathList: options.sharedDeps.filePathList,
             parser: parserDeps
         };
-        return kernel.lintText(text, {
-            ext: options.ext,
-            filePath: options.filePath,
-            // Wrap with (context, options, deps) => {}
-            rules:
-                options.rules &&
-                options.rules.map(rule => {
-                    return {
-                        ruleId: rule.ruleId,
-                        rule: bindTrailingArgs(rule.rule.report, sharedDependencies),
-                        options: rule.options
-                    };
-                }),
-            filterRules:
-                options.filterRules &&
-                options.filterRules.map(rule => {
-                    return {
-                        ruleId: rule.ruleId,
-                        rule: bindTrailingArgs(rule.rule.report, sharedDependencies),
-                        options: rule.options
-                    };
-                }),
-            plugins: options.plugins
-        });
+        return kernel
+            .lintText(text, {
+                ext: options.ext,
+                filePath: options.filePath,
+                // Wrap with (context, options, deps) => {}
+                rules:
+                    options.rules &&
+                    options.rules.map(rule => {
+                        return {
+                            ruleId: rule.ruleId,
+                            rule: bindTrailingArgs(rule.rule.report, sharedDependencies),
+                            options: rule.options
+                        };
+                    }),
+                filterRules:
+                    options.filterRules &&
+                    options.filterRules.map(rule => {
+                        return {
+                            ruleId: rule.ruleId,
+                            rule: bindTrailingArgs(rule.rule.report, sharedDependencies),
+                            options: rule.options
+                        };
+                    }),
+                plugins: options.plugins
+            })
+            .then(result => {
+                if (!validateResult(result)) {
+                    throw new Error("result is not compatible TextstatResult");
+                }
+                return result;
+            });
     }
 }

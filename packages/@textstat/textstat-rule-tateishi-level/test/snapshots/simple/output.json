@@ -9,6 +9,10 @@
             "column": 1,
             "severity": 2,
             "data": {
+                "range": [
+                    0,
+                    30357
+                ],
                 "message": "読みやすさの偏差値",
                 "details": [
                     {

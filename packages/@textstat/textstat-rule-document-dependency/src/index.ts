@@ -11,8 +11,8 @@ const stripHash = (pathString: string) => {
 };
 export const meta = {
     docs: {
-        homepage: {},
-        description: {}
+        homepage: "",
+        description: ""
     },
     messages: {
         message: {

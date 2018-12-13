@@ -32,6 +32,7 @@ export const report: TextstatRuleReporter = function(context, _options, deps) {
         },
         [Syntax.Document + ":exit"](node) {
             report(node, {
+                range: node.range,
                 message: t("message"),
                 details: [
                     {

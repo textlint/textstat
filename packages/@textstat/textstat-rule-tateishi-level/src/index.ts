@@ -150,6 +150,7 @@ export const report: TextstatRuleReporter = function(context, _options, deps) {
                 cp: calcCP({ dokutenCount, kutenCount })
             });
             report(node, {
+                range: node.range,
                 message: t("message"),
                 details: [
                     {
