@@ -8,6 +8,7 @@ export interface DocumentDependencyViewProps {
     results: {
         filePath: string;
         messages: {
+            ruleId: string;
             data: {
                 details: {
                     name: string;
@@ -24,11 +25,13 @@ export interface DocumentDependencyViewProps {
 type Node = { id: string; name: string };
 type Link = { source: string; target: string; value: 1 };
 
+const ruleId = "textstat-rule-document-dependency";
+
 export function DocumentDependencyView(props: DocumentDependencyViewProps) {
-    const nodeIds: string[] = [];
     // https://qiita.com/natsuriver/items/a65b3c15165db561bcfa
     // https://github.com/plotly/plotly.js/blob/36d9fb4ad341510823e6e25cb9202867ac94a94a/src/traces/sankey/render.js
     // source and target is id
+    const nodeIds: string[] = [];
     const links: Link[] = [];
     const idToIndex = (id: string) => {
         return nodeIds.findIndex(nodeId => nodeId === id);
@@ -39,6 +42,9 @@ export function DocumentDependencyView(props: DocumentDependencyViewProps) {
             nodeIds.push(sourceId);
         }
         result.messages.forEach(message => {
+            if (message.ruleId !== ruleId) {
+                return;
+            }
             message.data.details.forEach(detail => {
                 if (props.fromLink && detail.name !== "To Links") {
                     return;
@@ -66,6 +72,13 @@ export function DocumentDependencyView(props: DocumentDependencyViewProps) {
             name: nodeId.replace(commonPrefix, "").replace("/README.md", "")
         };
     });
+    if (nodes.length === 0) {
+        return (
+            <div>
+                <p>No Data</p>
+            </div>
+        );
+    }
     const nonCircularityLinks: Link[] = links
         .filter((link, index) => {
             const forwardLinks = links.slice(index + 1);

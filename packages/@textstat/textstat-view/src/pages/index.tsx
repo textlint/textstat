@@ -17,6 +17,10 @@ export default createSwitch({
         "/textstat-rule-document-dependency": createPage({
             title: "textstat-rule-document-dependency",
             getContent: () => import("./textstat-rule-document-dependency")
+        }),
+        "/textstat-rule-filesize": createPage({
+            title: "textstat-rule-filesize",
+            getContent: () => import("./textstat-rule-filesize")
         })
     }
 });

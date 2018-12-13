@@ -10,6 +10,10 @@ export const AppMenu = () => {
             path: "/"
         },
         {
+            title: "filesize",
+            path: "/textstat-rule-filesize/"
+        },
+        {
             title: "document-dependency",
             path: "/textstat-rule-document-dependency/"
         }
