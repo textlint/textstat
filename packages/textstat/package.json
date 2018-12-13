@@ -1,6 +1,6 @@
 {
   "name": "textstat",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "textstat is statistic engine for text documents.",
   "keywords": [
     "textlint",

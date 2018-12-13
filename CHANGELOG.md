@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/textlint/textstat/compare/v0.7.0...v0.7.1) (2018-12-13)
+
+
+### Bug Fixes
+
+* **textstat:** fix return value ([634efe3](https://github.com/textlint/textstat/commit/634efe3))
+
+
+
+
+
 # [0.7.0](https://github.com/textlint/textstat/compare/v0.6.2...v0.7.0) (2018-12-13)
 
 
