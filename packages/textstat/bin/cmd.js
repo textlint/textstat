@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const meow = require("meow");
 const run = require("../lib/src/cli").run;
 
