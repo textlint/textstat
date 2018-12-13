@@ -17,8 +17,8 @@
     "lib/",
     "src/"
   ],
-  "main": "lib/src/textstat.js",
-  "types": "lib/src/textstat.d.ts",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "bin": {
     "textstat": "bin/cmd.js"
   },
