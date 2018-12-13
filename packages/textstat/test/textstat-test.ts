@@ -111,6 +111,7 @@ describe("run", function() {
             "/Users/azu/.ghq/github.com/asciidwango/js-primer/source/use-case/todoapp/final/README.md"
         ];
         const results: any = await report({
+            locale: "en",
             globPatterns: filePathList
         });
         fs.writeFileSync(__dirname + "/out.json", JSON.stringify(results));
