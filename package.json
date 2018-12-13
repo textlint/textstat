@@ -11,7 +11,7 @@
     "build": "lerna run build --ignore @textstat/textstat-view",
     "netlify": "lerna run build --scope @textstat/textstat-view",
     "bootstrap": "lerna bootstrap && yarn run build",
-    "publish": "lerna publish",
+    "publish": "lerna publish --conventional-commits",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\""
   },
   "keywords": [
