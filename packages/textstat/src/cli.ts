@@ -16,11 +16,9 @@ export async function run(options: RunOptions) {
         globPatterns: options.globPatterns
     }).then(results => {
         if (options.format) {
-            const output = format(results, options.format);
-            console.log(output);
+            return format(results, options.format);
         } else {
-            const output = format(results, "json");
-            console.log(output);
+            return format(results, "json");
         }
     });
 }

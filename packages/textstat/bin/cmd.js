@@ -31,7 +31,11 @@ if (cli.input.length === 0) {
 run({
     globPatterns: cli.input,
     locale: cli.flags.locale
-}).catch(error => {
-    console.error(error);
-    process.exit(1);
-});
+})
+    .then(output => {
+        console.log(output);
+    })
+    .catch(error => {
+        console.error(error);
+        process.exit(1);
+    });
