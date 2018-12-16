@@ -30,7 +30,7 @@
     "plotly.js": "^1.42.5",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-navi": "^0.8.1",
+    "react-navi": "^0.8.4",
     "react-plotly.js": "^2.2.0",
     "react-scripts": "2.1.1",
     "typescript": "3.2.2"

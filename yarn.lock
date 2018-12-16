@@ -10980,9 +10980,9 @@ react-error-overlay@^5.1.0:
   version "5.1.0"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-5.1.0.tgz#c516995a5652e7bfbed8b497910d5280df74a7e8"
 
-react-navi@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.npmjs.org/react-navi/-/react-navi-0.8.1.tgz#062f3750e3b743f66d777e879e11b6afe3930d2e"
+react-navi@^0.8.4:
+  version "0.8.4"
+  resolved "https://registry.npmjs.org/react-navi/-/react-navi-0.8.4.tgz#dd13f6ec033263f7599f9b4e8fd8baf3cf80ee3d"
   dependencies:
     "@types/history" "^4.6.2"
     "@types/react" "^16.4.6"
