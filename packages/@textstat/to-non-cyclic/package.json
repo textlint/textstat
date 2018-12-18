@@ -1,0 +1,56 @@
+{
+  "name": "@textstat/to-non-cyclic",
+  "version": "1.0.0",
+  "description": "Convert node list to non-cyclic node list.",
+  "keywords": [
+    "util"
+  ],
+  "homepage": "https://github.com/textlint/textstat/tree/master/packages/@textstat/to-non-cyclic/",
+  "bugs": {
+    "url": "https://github.com/textlint/textstat/issues"
+  },
+  "license": "MIT",
+  "author": "azu",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "main": "lib/to-non-cyclic.js",
+  "types": "lib/to-non-cyclic.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/textlint/textstat.git"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production tsc -p .",
+    "clean": "rimraf lib/",
+    "prepublish": "npm run --if-present build",
+    "test": "mocha \"test/**/*.ts\"",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "watch": "tsc -p . --watch"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": false,
+    "tabWidth": 4
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.15",
+    "cross-env": "^5.2.0",
+    "mocha": "^5.2.0",
+    "prettier": "^1.15.3",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "ts-node-test-register": "^4.0.0",
+    "typescript": "^3.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

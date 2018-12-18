@@ -19,6 +19,7 @@
     "extends": "react-app"
   },
   "dependencies": {
+    "@textstat/to-non-cyclic": "^1.0.0",
     "@types/classnames": "^2.2.6",
     "@types/jest": "23.3.10",
     "@types/node": "10.12.12",

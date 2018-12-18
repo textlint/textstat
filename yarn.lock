@@ -1812,6 +1812,10 @@
   version "10.12.0"
   resolved "https://registry.npmjs.org/@types/node/-/node-10.12.0.tgz#ea6dcbddbc5b584c83f06c60e82736d8fbb0c235"
 
+"@types/node@^10.12.15":
+  version "10.12.15"
+  resolved "https://registry.npmjs.org/@types/node/-/node-10.12.15.tgz#20e85651b62fd86656e57c9c9bc771ab1570bc59"
+
 "@types/plotly.js@*":
   version "1.41.0"
   resolved "https://registry.npmjs.org/@types/plotly.js/-/plotly.js-1.41.0.tgz#4bdb00fd45ff4c736937b92ae89bb34e1fa86048"
@@ -13131,7 +13135,7 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript@3.2.2:
+typescript@3.2.2, typescript@^3.2.2:
   version "3.2.2"
   resolved "https://registry.npmjs.org/typescript/-/typescript-3.2.2.tgz#fe8101c46aa123f8353523ebdcf5730c2ae493e5"
 
