@@ -1,6 +1,6 @@
 {
   "name": "@textstat/textstat-view",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
@@ -19,7 +19,7 @@
     "extends": "react-app"
   },
   "dependencies": {
-    "@textstat/to-non-cyclic": "^1.0.0",
+    "@textstat/to-non-cyclic": "^0.8.0",
     "@types/classnames": "^2.2.6",
     "@types/jest": "23.3.10",
     "@types/node": "10.12.12",

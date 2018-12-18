@@ -1,6 +1,6 @@
 {
   "name": "@textstat/to-non-cyclic",
-  "version": "1.0.0",
+  "version": "0.8.0",
   "description": "Convert node list to non-cyclic node list.",
   "keywords": [
     "util"
