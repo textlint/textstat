@@ -1853,6 +1853,10 @@
   version "1.0.2"
   resolved "https://registry.npmjs.org/@types/tapable/-/tapable-1.0.2.tgz#e13182e1b69871a422d7863e11a4a6f5b814a4bd"
 
+"@types/traverse@^0.6.32":
+  version "0.6.32"
+  resolved "https://registry.npmjs.org/@types/traverse/-/traverse-0.6.32.tgz#f9fdfa40cd4898deaa975a14511aec731de8235e"
+
 "@webassemblyjs/ast@1.7.6":
   version "1.7.6"
   resolved "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.7.6.tgz#3ef8c45b3e5e943a153a05281317474fef63e21e"
@@ -9877,6 +9881,10 @@ pbkdf2@^3.0.3:
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
+
+performant-array-to-tree@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/performant-array-to-tree/-/performant-array-to-tree-1.1.2.tgz#90e05ed41655d67e0cf623f0e117d419433f9d7d"
 
 permutation-parity@^1.0.0:
   version "1.0.0"
