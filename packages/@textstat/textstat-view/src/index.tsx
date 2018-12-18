@@ -4,7 +4,7 @@ import * as ReactDOM from "react-dom";
 import * as Navi from "navi";
 import pages from "./pages/index";
 import App from "./App";
-import { register } from "./serviceWorker";
+import { unregister } from "./serviceWorker";
 
 async function main() {
     let navigation = Navi.createBrowserNavigation({ pages });
@@ -19,4 +19,4 @@ Navi.app({
     main,
     exports: App
 });
-register();
+unregister();
