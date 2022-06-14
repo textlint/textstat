@@ -2,6 +2,8 @@ import * as assert from "assert";
 import { TextstatKernel } from "../src/TextstatKernel";
 import * as rule from "./rule/textstat-rule-example";
 
+import generated from "@textlint/textlint-plugin-markdown";
+
 describe("@textstat/kernel", function() {
     it("work", async () => {
         const kernel = new TextstatKernel();
@@ -20,7 +22,7 @@ This is example.
                 plugins: [
                     {
                         pluginId: "markdown",
-                        plugin: require("@textlint/textlint-plugin-markdown").default
+                        plugin: generated
                     }
                 ],
                 filterRules: [],

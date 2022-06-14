@@ -1,5 +1,5 @@
 import * as assert from "assert";
-import { Localize } from "../src";
+import { Localize } from "../src/index.js";
 
 const messages = {
     simple: {

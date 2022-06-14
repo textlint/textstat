@@ -1,4 +1,4 @@
-import template = require("lodash.template");
+import template from "lodash.template";
 // template('hello {{ user }}!'
 const TEMPLATE_INTERPOLATE = /{{([\s\S]+?)}}/g;
 // TODO: add locale

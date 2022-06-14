@@ -8,8 +8,8 @@ import {
 import { TextstatKernelFilterRule, TextstatKernelRule, TextstatRuleSharedDependencies } from "@textstat/rule-context";
 import * as path from "path";
 import { LocaleTag } from "@textstat/rule-context";
-import { validateResult } from "./ResultValidator";
-import { TextstatResult } from "./type";
+import { validateResult } from "./ResultValidator.js";
+import { TextstatResult } from "./type.js";
 
 function bindTrailingArgs(fn: any, sharedDeps: TextstatRuleSharedDependencies) {
     return function(context: any, options?: any) {

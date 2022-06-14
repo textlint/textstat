@@ -1,8 +1,8 @@
 import { TextlintRuleOptions } from "@textlint/kernel";
-import { LocaleTag, LocalizeMessages } from "./Localize";
+import { LocaleTag, LocalizeMessages } from "./Localize.js";
 import { TxtNode, TxtNodeType } from "@textlint/ast-node-types";
 import { TextlintFilterRuleContext, TextlintRuleContext } from "@textlint/types";
-import { TextlintPluginPreProcessResult } from "@textlint/types/lib/src/Plugin/TextlintPluginModule";
+import type { TextlintPluginPreProcessResult } from "@textlint/types/lib/src/Plugin/TextlintPluginModule.js";
 
 export type TextstatRuleSharedDependencies = {
     // locale for message

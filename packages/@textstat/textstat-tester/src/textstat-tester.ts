@@ -1,10 +1,9 @@
 import { TextstatKernel } from "@textstat/kernel";
-import { TextstatKernelRule } from "@textstat/rule-context";
-
+import { TextstatKernelRule, LocaleTag } from "@textstat/rule-context";
 import * as fs from "fs";
 import * as path from "path";
 import * as assert from "assert";
-import { LocaleTag } from "@textstat/rule-context/lib/src/Localize";
+import markdown from "@textlint/textlint-plugin-markdown";
 
 export function runTest(
     snapshotDirectory: string,
@@ -32,9 +31,9 @@ export function runTest(
             const sharedDepsOwn =
                 typeof sharedDeps === "object"
                     ? {
-                          ...defaultSharedDeps,
-                          ...sharedDeps
-                      }
+                        ...defaultSharedDeps,
+                        ...sharedDeps
+                    }
                     : defaultSharedDeps;
             const actualResult = await textstat.report(actualContent, {
                 filePath: actualFilePath,
@@ -43,7 +42,7 @@ export function runTest(
                 plugins: [
                     {
                         pluginId: "markdown",
-                        plugin: require("@textlint/textlint-plugin-markdown").default
+                        plugin: markdown
                     }
                 ],
                 sharedDeps: sharedDepsOwn

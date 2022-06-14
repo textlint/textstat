@@ -1,5 +1,5 @@
 import { TextlintRuleOptions } from "@textlint/kernel";
-import { TextstatRuleMeta, TextstatRuleReporter } from "./report-type";
+import type { TextstatRuleMeta, TextstatRuleReporter } from "./report-type.js";
 /**
  * Textstat Rule preset
  */

@@ -1,4 +1,4 @@
-import { TextstatMessage, TextstatResult } from "./type";
+import type { TextstatMessage, TextstatResult } from "./type.js";
 
 export const validateResult = (result: any): result is TextstatResult => {
     result.messages.forEach((message: TextstatMessage, index: number) => {
