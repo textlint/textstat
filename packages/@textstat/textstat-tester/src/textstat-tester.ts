@@ -31,9 +31,9 @@ export function runTest(
             const sharedDepsOwn =
                 typeof sharedDeps === "object"
                     ? {
-                        ...defaultSharedDeps,
-                        ...sharedDeps
-                    }
+                          ...defaultSharedDeps,
+                          ...sharedDeps
+                      }
                     : defaultSharedDeps;
             const actualResult = await textstat.report(actualContent, {
                 filePath: actualFilePath,

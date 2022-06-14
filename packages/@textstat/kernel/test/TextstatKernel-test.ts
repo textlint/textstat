@@ -1,6 +1,6 @@
 import * as assert from "assert";
-import { TextstatKernel } from "../src/TextstatKernel";
-import * as rule from "./rule/textstat-rule-example";
+import { TextstatKernel } from "../src/TextstatKernel.js";
+import * as rule from "./rule/textstat-rule-example.js";
 
 import generated from "@textlint/textlint-plugin-markdown";
 
