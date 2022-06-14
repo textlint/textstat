@@ -40,7 +40,7 @@ export class Localize<T extends LocalizeMessages> {
      */
     t = (key: keyof T, options?: object) => {
         if (!this.messages[key]) {
-            throw new Error(`key:${key} is missing in messages.`);
+            throw new Error(`key:${String(key)} is missing in messages.`);
         }
         const message: LocalizeMessageMulti | string = this.messages[key];
         if (typeof message === "string") {
@@ -50,9 +50,9 @@ export class Localize<T extends LocalizeMessages> {
         const localizedMessage = message[locale];
         if (!localizedMessage) {
             if (message[DEFAULT_LOCAL]) {
-                throw new Error(`key:${key}.${this.locale} is missing in messages.`);
+                throw new Error(`key:${String(key)}.${this.locale} is missing in messages.`);
             }
-            throw new Error(`key:${key}.${DEFAULT_LOCAL} should be defined in messages.`);
+            throw new Error(`key:${String(key)}.${DEFAULT_LOCAL} should be defined in messages.`);
         }
         return this.applyOption(localizedMessage, options);
     };

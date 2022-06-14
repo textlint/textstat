@@ -1,5 +1,4 @@
 {
-
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./lib/",
@@ -7,13 +6,10 @@
   },
   "references": [
     {
-      "path": "../rule-context/tsconfig.json"
+      "path": "../rule-context"
     },
     {
-      "path": "../kernel/tsconfig.json"
-    },
-    {
-      "path": "../textstat-tester/tsconfig.json"
+      "path": "../textstat-tester"
     }
   ],
   "include": [

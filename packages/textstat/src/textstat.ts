@@ -3,7 +3,7 @@ import * as path from "path";
 import { TextstatKernel } from "@textstat/kernel";
 import { TextstatRulePreset } from "@textstat/rule-context";
 import { createPreset } from "@textstat/textstat-rule-preset-standard";
-import globby from "globby";
+import { globby } from "globby";
 
 function createTextstatPresetToTextlintPreset(preset: TextstatRulePreset) {
     return Object.keys(preset.rules).map(key => {

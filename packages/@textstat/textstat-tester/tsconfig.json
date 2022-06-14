@@ -6,10 +6,10 @@
   },
   "references": [
     {
-      "path": "../rule-context/tsconfig.json"
+      "path": "../kernel"
     },
     {
-      "path": "../kernel/tsconfig.json"
+      "path": "../rule-context"
     }
   ],
   "include": [

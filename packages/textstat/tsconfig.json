@@ -6,13 +6,13 @@
   },
   "references": [
     {
-      "path": "../@textstat/rule-context/tsconfig.json"
+      "path": "../@textstat/kernel"
     },
     {
-      "path": "../@textstat/kernel/tsconfig.json"
+      "path": "../@textstat/rule-context"
     },
     {
-      "path": "../@textstat/textstat-rule-preset-standard/tsconfig.json"
+      "path": "../@textstat/textstat-rule-preset-standard"
     }
   ],
   "include": [

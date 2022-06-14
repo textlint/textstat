@@ -1,8 +1,8 @@
 import { TextlintRuleOptions } from "@textlint/kernel";
-import RuleContext from "@textlint/kernel/lib/kernel/src/core/rule-context";
-import FilterRuleContext from "@textlint/kernel/lib/kernel/src/core/filter-rule-context";
-import { TxtNode, TxtNodeType } from "@textlint/kernel/lib/ast-node-types/src";
 import { LocaleTag, LocalizeMessages } from "./Localize";
+import { TxtNode, TxtNodeType } from "@textlint/ast-node-types";
+import { TextlintFilterRuleContext, TextlintRuleContext } from "@textlint/types";
+import { TextlintPluginPreProcessResult } from "@textlint/types/lib/src/Plugin/TextlintPluginModule";
 
 export type TextstatRuleSharedDependencies = {
     // locale for message
@@ -12,7 +12,7 @@ export type TextstatRuleSharedDependencies = {
     filePathList: string[];
     // parser
     parser: {
-        parse(text: string, ext: string): TxtNode;
+        parse(text: string, ext: string): TextlintPluginPreProcessResult | Promise<TextlintPluginPreProcessResult>;
     };
 };
 
@@ -28,7 +28,7 @@ export type TextstatRuleMeta = {
 };
 
 export type TextstatRuleReporter = (
-    context: Readonly<RuleContext>,
+    context: Readonly<TextlintRuleContext>,
     options: TextlintRuleOptions,
     deps: TextstatRuleSharedDependencies
 ) => { [P in TxtNodeType]?: (node: TxtNode) => void | Promise<any> };
@@ -43,7 +43,7 @@ export interface TextstatKernelRule {
 }
 
 export type TextstatFilterRuleReporter = (
-    context: Readonly<FilterRuleContext>,
+    context: Readonly<TextlintFilterRuleContext>,
     options: TextlintRuleOptions,
     deps: TextstatRuleSharedDependencies
 ) => { [P in TxtNodeType]?: (node: TxtNode) => void | Promise<any> };

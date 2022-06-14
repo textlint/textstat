@@ -12,7 +12,9 @@
     "netlify": "lerna run build --scope @textstat/textstat-view",
     "bootstrap": "lerna bootstrap && yarn run build",
     "publish": "lerna publish --conventional-commits",
-    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\""
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "wtpr": "workspaces-to-typescript-project-references",
+    "wtpr:check": "workspaces-to-typescript-project-references --check"
   },
   "keywords": [
     "textlint",
@@ -20,6 +22,7 @@
   ],
   "private": true,
   "devDependencies": {
+    "@monorepo-utils/workspaces-to-typescript-project-references": "^2.8.2",
     "husky": "^1.3.1",
     "lerna": "^3.13.1",
     "lint-staged": "^8.1.4",

@@ -1,8 +1,11 @@
 import * as path from "path";
 import { runTest } from "@textstat/textstat-tester";
-import * as rule from "../src/index";
+import * as rule from "../src/index.js";
+import glob from "glob";
+import url from "url";
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const glob = require("glob");
 describe("textstat-rule-document-dependency", () => {
     const snapshotDir = path.join(__dirname, "snapshots");
     runTest(snapshotDir, {

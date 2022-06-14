@@ -2,9 +2,10 @@
 import { TextstatRuleReporter, Localize } from "@textstat/rule-context";
 import * as fs from "fs";
 import * as path from "path";
+// @ts-ignore
+import isUrl from "is-url";
+import { visit } from "unist-util-visit";
 
-const isUrl = require("is-url");
-const visit = require("unist-util-visit");
 const stripHash = (pathString: string) => {
     // remove #
     return pathString.replace(/#.*$/, "");
@@ -75,6 +76,7 @@ export const report: TextstatRuleReporter = function(context, _options, deps) {
         const text = fs.readFileSync(fromFilePath, "utf-8");
         const AST = deps.parser.parse(text, fromFilePath);
         const urls: string[] = [];
+        // @ts-expect-error: no
         visit(AST, [Syntax.Link, "Definition"], (node: any) => {
             if (!(node.identifier && /^\^/.test(node.identifier))) {
                 urls.push(node.url);

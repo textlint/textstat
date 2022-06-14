@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
     "outDir": "________RENAMED_______",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
     "newLine": "LF",
-    "target": "es5",
+    "target": "ES2021",
     "sourceMap": true,
     "declaration": true,
     "jsx": "preserve",
     "lib": [
-      "es2017",
+      "ES2020",
       "dom"
     ],
     "strict": true,
@@ -19,7 +19,8 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     /* monorepo */
-    "composite": true
+    "composite": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*"

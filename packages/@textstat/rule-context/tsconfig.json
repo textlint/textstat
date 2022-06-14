@@ -9,5 +9,6 @@
   "exclude": [
     ".git",
     "node_modules"
-  ]
+  ],
+  "references": []
 }

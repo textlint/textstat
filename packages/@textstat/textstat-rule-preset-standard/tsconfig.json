@@ -6,10 +6,28 @@
   },
   "references": [
     {
-      "path": "../rule-context/tsconfig.json"
+      "path": "../textstat-rule-document-dependency"
     },
     {
-      "path": "../textstat-tester/tsconfig.json"
+      "path": "../textstat-rule-filesize"
+    },
+    {
+      "path": "../textstat-rule-number-of-characters"
+    },
+    {
+      "path": "../textstat-rule-number-of-images"
+    },
+    {
+      "path": "../textstat-rule-number-of-links"
+    },
+    {
+      "path": "../textstat-rule-number-of-list-items"
+    },
+    {
+      "path": "../textstat-rule-number-of-paragraphs"
+    },
+    {
+      "path": "../textstat-rule-number-of-sentences"
     }
   ],
   "include": [

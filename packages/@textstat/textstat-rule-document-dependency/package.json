@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "@textstat/textstat-rule-document-dependency",
   "version": "0.8.0",
   "description": "Report document dependencies.",
@@ -41,19 +42,19 @@
   "dependencies": {
     "@textstat/rule-context": "^0.8.0",
     "is-url": "^1.2.4",
-    "unist-util-visit": "^1.4.0"
+    "unist-util-visit": "^4.1.0"
   },
   "devDependencies": {
     "@textstat/textstat-tester": "^0.8.0",
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^11.9.6",
-    "cross-env": "^5.1.3",
-    "mocha": "^6.0.2",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^17.0.42",
+    "cross-env": "^7.0.3",
+    "mocha": "^10.0.0",
     "node-glob": "^1.2.0",
-    "prettier": "^1.16.4",
-    "ts-node": "^8.0.2",
-    "ts-node-test-register": "^8.0.0",
-    "typescript": "^3.3.3333"
+    "prettier": "^2.7.0",
+    "ts-node": "^10.8.1",
+    "ts-node-test-register": "^10.0.0",
+    "typescript": "^4.7.3"
   },
   "publishConfig": {
     "access": "public"

@@ -71,7 +71,7 @@ function createTextstatPresetToTextlintPreset(
 }
 
 export class TextstatKernel {
-    report(
+    async report(
         text: string,
         options: {
             ext: string;
@@ -87,7 +87,7 @@ export class TextstatKernel {
         }
     ): Promise<TextstatResult> {
         const kernel = new TextlintKernel();
-        const parserDeps = createParser(options.plugins);
+        const parserDeps = await createParser(options.plugins);
         const sharedDependencies: TextstatRuleSharedDependencies = {
             locale: options.sharedDeps.locale,
             filePathList: options.sharedDeps.filePathList,

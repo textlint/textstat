@@ -20,7 +20,7 @@ This is example.
                 plugins: [
                     {
                         pluginId: "markdown",
-                        plugin: require("@textlint/textlint-plugin-markdown")
+                        plugin: require("@textlint/textlint-plugin-markdown").default
                     }
                 ],
                 filterRules: [],

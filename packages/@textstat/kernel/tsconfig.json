@@ -3,11 +3,7 @@
   "compilerOptions": {
     "outDir": "./lib/"
   },
-  "references": [
-    {
-      "path": "../rule-context/tsconfig.json"
-    }
-  ],
+  "references": [],
   "include": [
     "src/**/*"
   ],

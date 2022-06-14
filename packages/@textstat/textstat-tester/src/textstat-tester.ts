@@ -43,7 +43,7 @@ export function runTest(
                 plugins: [
                     {
                         pluginId: "markdown",
-                        plugin: require("@textlint/textlint-plugin-markdown")
+                        plugin: require("@textlint/textlint-plugin-markdown").default
                     }
                 ],
                 sharedDeps: sharedDepsOwn
