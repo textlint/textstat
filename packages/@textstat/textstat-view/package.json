@@ -6,7 +6,7 @@
     "build": "react-scripts build",
     "build:navi": "cross-env REACT_APP_NAVI=true navi-scripts build",
     "eject": "react-scripts eject",
-    "start": "react-scripts start",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "test": "react-scripts test",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\""
   },
