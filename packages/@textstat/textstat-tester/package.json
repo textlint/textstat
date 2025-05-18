@@ -36,7 +36,7 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "@textlint/textlint-plugin-markdown": "^5.1.4",
+    "@textlint/textlint-plugin-markdown": "^14.7.1",
     "@textstat/kernel": "^0.8.0",
     "@textstat/rule-context": "^0.8.0"
   },
