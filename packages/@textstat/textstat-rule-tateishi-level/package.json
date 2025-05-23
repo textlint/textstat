@@ -40,10 +40,10 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "@textlint/ast-node-types": "^4.2.1",
+    "@textlint/ast-node-types": "^14.7.1",
     "@textstat/rule-context": "^0.8.0",
-    "sentence-splitter": "^3.0.11",
-    "textlint-rule-helper": "^2.0.1"
+    "sentence-splitter": "^5.0.0",
+    "textlint-rule-helper": "^2.3.1"
   },
   "devDependencies": {
     "@textstat/textstat-tester": "^0.8.0",

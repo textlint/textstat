@@ -38,7 +38,7 @@
     "tabWidth": 4
   },
   "dependencies": {
-    "@textlint/kernel": "^3.1.4"
+    "@textlint/kernel": "^14.7.1"
   },
   "devDependencies": {
     "@textlint/textlint-plugin-markdown": "^5.0.1",

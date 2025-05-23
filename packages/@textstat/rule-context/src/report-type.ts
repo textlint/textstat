@@ -1,6 +1,6 @@
 import { TextlintRuleOptions } from "@textlint/kernel";
-import RuleContext from "@textlint/kernel/lib/kernel/src/core/rule-context";
-import FilterRuleContext from "@textlint/kernel/lib/kernel/src/core/filter-rule-context";
+import { TextlintRuleContext } from "@textlint/types";
+import { TextlintFilterRuleContext } from "@textlint/types";
 import { TxtNode, TxtNodeType } from "@textlint/kernel/lib/ast-node-types/src";
 import { LocaleTag, LocalizeMessages } from "./Localize";
 
@@ -28,7 +28,7 @@ export type TextstatRuleMeta = {
 };
 
 export type TextstatRuleReporter = (
-    context: Readonly<RuleContext>,
+    context: Readonly<TextlintRuleContext>,
     options: TextlintRuleOptions,
     deps: TextstatRuleSharedDependencies
 ) => { [P in TxtNodeType]?: (node: TxtNode) => void | Promise<any> };
@@ -43,7 +43,7 @@ export interface TextstatKernelRule {
 }
 
 export type TextstatFilterRuleReporter = (
-    context: Readonly<FilterRuleContext>,
+    context: Readonly<TextlintFilterRuleContext>,
     options: TextlintRuleOptions,
     deps: TextstatRuleSharedDependencies
 ) => { [P in TxtNodeType]?: (node: TxtNode) => void | Promise<any> };
