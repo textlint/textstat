@@ -42,7 +42,6 @@ export function NumberOfCharactersView(props: FileSizeViewProps) {
     }, [props.results]);
     return (
         <div>
-            <div />
             <Plot
                 data={[
                     {
